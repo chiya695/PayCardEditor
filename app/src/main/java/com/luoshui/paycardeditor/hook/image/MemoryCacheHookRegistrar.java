@@ -15,7 +15,7 @@ import java.lang.reflect.Modifier;
 import java.util.Collections;
 import java.util.Map;
 
-import io.github.libxposed.api.XposedInterface.ExceptionMode;
+import com.luoshui.paycardeditor.hook.HookCompat;
 import io.github.libxposed.api.XposedModule;
 
 /**
@@ -81,19 +81,17 @@ public final class MemoryCacheHookRegistrar {
     public void installMemoryHooks(@NonNull DexKitHookTargets dexKitTargets) {
         Class<?> engineClass = dexKitTargets.getGlideEngineClass();
         if (engineClass == null) {
-            mModule.log(Log.WARN, TAG, "Engine memory lookup hook skipped: Glide Engine class not resolved by DexKit");
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "Engine memory lookup hook skipped: Glide Engine class not resolved by DexKit");
             return;
         }
         Method loadFromCacheMethod = findLoadFromCacheMethod(engineClass);
         if (loadFromCacheMethod == null) {
-            mModule.log(Log.WARN, TAG, "Engine memory lookup hook skipped: no (Key, boolean, long) candidate in " + engineClass.getName());
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "Engine memory lookup hook skipped: no (Key, boolean, long) candidate in " + engineClass.getName());
             return;
         }
         try {
             mSupport.prepareMethod(loadFromCacheMethod, "Engine.loadFromCache");
-            mModule.hook(loadFromCacheMethod)
-                    .setExceptionMode(ExceptionMode.PROTECTIVE)
-                    .intercept(chain -> {
+            HookCompat.hook(mModule, loadFromCacheMethod, chain -> {
                         Object key = chain.getArg(0);
                         if (shouldBypassMemoryCache(key)) {
                             // Returning null tells Engine the lookup missed; the caller then
@@ -104,11 +102,11 @@ public final class MemoryCacheHookRegistrar {
                         return chain.proceed();
                     });
             mSupport.recordInstalledHook(HookCatalog.GLIDE_ENGINE_LOAD_FROM_CACHE, loadFromCacheMethod);
-            mModule.log(Log.INFO, TAG, "Engine memory lookup hook installed: "
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.INFO, TAG, "Engine memory lookup hook installed: "
                     + engineClass.getName() + '#' + loadFromCacheMethod.getName()
                     + describeSignature(loadFromCacheMethod));
         } catch (Throwable throwable) {
-            mModule.log(Log.WARN, TAG, "Engine memory lookup hook install failed: " + Log.getStackTraceString(throwable));
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "Engine memory lookup hook install failed: " + Log.getStackTraceString(throwable));
         }
     }
 

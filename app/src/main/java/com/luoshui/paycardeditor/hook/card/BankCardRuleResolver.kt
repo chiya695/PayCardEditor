@@ -39,7 +39,7 @@ internal class BankCardRuleResolver(
             val rulesJson = result?.getString(HookEnvironment.EXTRA_RULES_JSON).orEmpty()
             BankCardRule.parseList(rulesJson)
         }.onFailure {
-            module.log(Log.ERROR, TAG, "load bank rules failed: ${it.stackTraceToString()}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.ERROR, TAG, "load bank rules failed: ${it.stackTraceToString()}")
         }.getOrDefault(cachedRules).also {
             cachedRules = it
             lastLoadAt = now

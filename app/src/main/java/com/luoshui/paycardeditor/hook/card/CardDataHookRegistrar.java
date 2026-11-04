@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import io.github.libxposed.api.XposedInterface.ExceptionMode;
+import com.luoshui.paycardeditor.hook.HookCompat;
 import io.github.libxposed.api.XposedModule;
 
 public final class CardDataHookRegistrar {
@@ -42,9 +42,7 @@ public final class CardDataHookRegistrar {
     public void installCardInfoHooks(@NonNull Class<?> cardInfoClass) throws NoSuchMethodException {
         Method updateInfo = cardInfoClass.getDeclaredMethod("updateInfo", cardInfoClass);
         mSupport.prepareMethod(updateInfo, "CardInfo.updateInfo");
-        mModule.hook(updateInfo)
-                .setExceptionMode(ExceptionMode.PROTECTIVE)
-                .intercept(chain -> {
+        HookCompat.hook(mModule, updateInfo, chain -> {
                     Object result = chain.proceed();
                     mSupport.runHookSideEffect("CardInfo.updateInfo", () -> {
                         mBankCardReplacer.apply(chain.getThisObject(), HookProcessContext.INSTANCE.resolve());
@@ -63,9 +61,7 @@ public final class CardDataHookRegistrar {
         Method putSingle = HookReflectionUtils.findOverload(cardInfoManagerClass, "put", parameterTypes ->
                 parameterTypes.length == 1 && cardInfoClass.getName().equals(parameterTypes[0].getName()));
         mSupport.prepareMethod(putSingle, "CardInfoManager.put(CardInfo)");
-        mModule.hook(putSingle)
-                .setExceptionMode(ExceptionMode.PROTECTIVE)
-                .intercept(chain -> {
+        HookCompat.hook(mModule, putSingle, chain -> {
                     mSupport.runHookSideEffect("CardInfoManager.put(CardInfo)", () -> {
                         mBankCardReplacer.apply(chain.getArg(0), HookProcessContext.INSTANCE.resolve());
                         mSnapshotStore.mergeCard(chain.getArg(0), "CardInfoManager.put(CardInfo)");
@@ -77,9 +73,7 @@ public final class CardDataHookRegistrar {
         Method putList = HookReflectionUtils.findOverload(cardInfoManagerClass, "put", parameterTypes ->
                 parameterTypes.length == 1 && List.class.isAssignableFrom(parameterTypes[0]));
         mSupport.prepareMethod(putList, "CardInfoManager.put(List)");
-        mModule.hook(putList)
-                .setExceptionMode(ExceptionMode.PROTECTIVE)
-                .intercept(chain -> {
+        HookCompat.hook(mModule, putList, chain -> {
                     Object list = chain.getArg(0);
                     mSupport.runHookSideEffect("CardInfoManager.put(List)", () -> {
                         if (list instanceof Collection<?>) {
@@ -104,9 +98,7 @@ public final class CardDataHookRegistrar {
             throw new IllegalStateException("DexKit did not resolve bank virtual card merge method");
         }
         mSupport.prepareMethod(mergeVirtualCardInfo, "BankCardInfo.mergeVirtualCardInfo");
-        mModule.hook(mergeVirtualCardInfo)
-                .setExceptionMode(ExceptionMode.PROTECTIVE)
-                .intercept(chain -> {
+        HookCompat.hook(mModule, mergeVirtualCardInfo, chain -> {
                     Object result = chain.proceed();
                     mSupport.runHookSideEffect("i6.e.O", () -> patchAndMergeCard(chain.getArg(0), "i6.e.O"));
                     return result;
@@ -118,9 +110,7 @@ public final class CardDataHookRegistrar {
             throw new IllegalStateException("DexKit did not resolve bank query pan merge method");
         }
         mSupport.prepareMethod(mergeQueryPanInfo, "BankCardInfo.mergeQueryPanInfo");
-        mModule.hook(mergeQueryPanInfo)
-                .setExceptionMode(ExceptionMode.PROTECTIVE)
-                .intercept(chain -> {
+        HookCompat.hook(mModule, mergeQueryPanInfo, chain -> {
                     Object result = chain.proceed();
                     mSupport.runHookSideEffect("i6.e.N", () -> patchAndMergeCard(chain.getArg(0), "i6.e.N"));
                     return result;
@@ -136,9 +126,7 @@ public final class CardDataHookRegistrar {
                 ? dexKitTargets.getTransitUpdateBackground()
                 : cardInfoClass.getDeclaredMethod("updateBackground", Context.class);
         mSupport.prepareMethod(updateBackground, "CardInfo.updateBackground");
-        mModule.hook(updateBackground)
-                .setExceptionMode(ExceptionMode.PROTECTIVE)
-                .intercept(chain -> {
+        HookCompat.hook(mModule, updateBackground, chain -> {
                     Object result = chain.proceed();
                     mSupport.runHookSideEffect("CardInfo.updateBackground", () -> patchAndMergeCard(chain.getThisObject(), "CardInfo.updateBackground"));
                     return result;
@@ -152,9 +140,7 @@ public final class CardDataHookRegistrar {
             throw new IllegalStateException("DexKit did not resolve mifare query method");
         }
         mSupport.prepareMethod(mifareQuery, "MifareModel.queryDoorCardInfo");
-        mModule.hook(mifareQuery)
-                .setExceptionMode(ExceptionMode.PROTECTIVE)
-                .intercept(chain -> {
+        HookCompat.hook(mModule, mifareQuery, chain -> {
                     Object result = chain.proceed();
                     mSupport.runHookSideEffect("g6.c.o#arg", () -> patchAndMergeCard(chain.getArg(1), "g6.c.o#arg"));
                     mSupport.runHookSideEffect("g6.c.o#result", () -> mergeUnknownPayload(result, "g6.c.o#result"));
@@ -173,9 +159,7 @@ public final class CardDataHookRegistrar {
         String label = entry.getLabel();
         Method method = cardInfoManagerClass.getDeclaredMethod(methodName, cacheLauncherClass);
         mSupport.prepareMethod(method, label);
-        mModule.hook(method)
-                .setExceptionMode(ExceptionMode.PROTECTIVE)
-                .intercept(chain -> {
+        HookCompat.hook(mModule, method, chain -> {
                     Object result = chain.proceed();
                     mSupport.runHookSideEffect(label, () -> {
                         if (result instanceof Collection<?>) {

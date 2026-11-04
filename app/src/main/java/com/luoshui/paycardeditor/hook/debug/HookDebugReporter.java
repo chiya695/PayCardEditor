@@ -58,7 +58,7 @@ public final class HookDebugReporter {
                 .append(", UID: ").append(Process.myUid())
                 .append(", ISA: ").append(resolveIsaName())
                 .append('\n');
-        builder.append("Xposed API version: ").append(mModule.getApiVersion()).append('\n');
+        builder.append("Xposed API version: ").append(mModule.getAPIVersion()).append('\n');
         builder.append("module: ").append(apkPath).append('\n');
         builder.append(mModule.getClass().getName())
                 .append(' ')

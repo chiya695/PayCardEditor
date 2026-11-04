@@ -30,7 +30,7 @@ internal class BankCardReplacer(
         }
 
         if (changedFields.isNotEmpty()) {
-            module.log(Log.INFO, TAG, "card rule applied to ${snapshot.title}: ${changedFields.joinToString()}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.INFO, TAG, "card rule applied to ${snapshot.title}: ${changedFields.joinToString()}")
         }
     }
 

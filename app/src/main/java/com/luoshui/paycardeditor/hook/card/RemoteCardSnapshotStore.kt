@@ -83,7 +83,7 @@ internal class RemoteCardSnapshotStore(
         try {
             block()
         } catch (throwable: Throwable) {
-            module.log(Log.ERROR, TAG, "suppressed snapshot sync failure in $source: ${throwable.stackTraceToString()}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.ERROR, TAG, "suppressed snapshot sync failure in $source: ${throwable.stackTraceToString()}")
         }
     }
 
@@ -100,7 +100,7 @@ internal class RemoteCardSnapshotStore(
                 runCatching {
                     CardReflectionReader.read(card)
                 }.onFailure { throwable ->
-                    module.log(Log.WARN, TAG, "$source skipped unreadable card: ${throwable.stackTraceToString()}")
+                    com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "$source skipped unreadable card: ${throwable.stackTraceToString()}")
                 }.getOrNull()?.let { snapshot ->
                     newSnapshots[snapshot.key] = snapshot
                 }
@@ -115,7 +115,7 @@ internal class RemoteCardSnapshotStore(
                     runCatching {
                         put(snapshot.toJson())
                     }.onFailure { throwable ->
-                        module.log(Log.WARN, TAG, "$source skipped snapshot payload for ${snapshot.title}: ${throwable.stackTraceToString()}")
+                        com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "$source skipped snapshot payload for ${snapshot.title}: ${throwable.stackTraceToString()}")
                     }
                 }
             }
@@ -132,9 +132,9 @@ internal class RemoteCardSnapshotStore(
                     }
                 )
             }
-            module.log(Log.DEBUG, TAG, "$source synced ${newSnapshots.size} card snapshots")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.DEBUG, TAG, "$source synced ${newSnapshots.size} card snapshots")
         } catch (throwable: Throwable) {
-            module.log(Log.ERROR, TAG, "snapshot sync failed: ${throwable.stackTraceToString()}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.ERROR, TAG, "snapshot sync failed: ${throwable.stackTraceToString()}")
         }
     }
 
@@ -154,7 +154,7 @@ internal class RemoteCardSnapshotStore(
     private fun callProvider(method: String, extras: Bundle) {
         val context = HookProcessContext.resolve() ?: run {
             enqueuePendingCall(method, extras)
-            module.log(Log.WARN, TAG, "skip provider sync: no application context")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "skip provider sync: no application context")
             return
         }
         flushPendingCalls(context)
@@ -165,7 +165,7 @@ internal class RemoteCardSnapshotStore(
         try {
             context.contentResolver.call(providerUri, method, null, Bundle(extras))
         } catch (throwable: Throwable) {
-            module.log(Log.ERROR, TAG, "provider sync failed: ${throwable.stackTraceToString()}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.ERROR, TAG, "provider sync failed: ${throwable.stackTraceToString()}")
         }
     }
 

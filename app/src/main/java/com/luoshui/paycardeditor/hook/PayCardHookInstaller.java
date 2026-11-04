@@ -77,13 +77,13 @@ final class PayCardHookInstaller {
 
                 mInstalled = anyInstalled;
                 if (anyInstalled) {
-                    mModule.log(Log.INFO, TAG, "hooks installed for com.miui.tsmclient");
+                    com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.INFO, TAG, "hooks installed for com.miui.tsmclient");
                 } else {
-                    mModule.log(Log.ERROR, TAG, "no hook groups were installed for com.miui.tsmclient");
+                    com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.ERROR, TAG, "no hook groups were installed for com.miui.tsmclient");
                 }
             } catch (Throwable throwable) {
                 mSnapshotStore.recordInstallError("install", throwable);
-                mModule.log(Log.ERROR, TAG, "failed to install hooks: " + Log.getStackTraceString(throwable));
+                com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.ERROR, TAG, "failed to install hooks: " + Log.getStackTraceString(throwable));
             }
         }
     }
@@ -102,14 +102,14 @@ final class PayCardHookInstaller {
             if (cached != null) {
                 DexKitHookTargets cachedTargets = DexKitMethodLocator.hydrate(cached, classLoader, mModule);
                 if (DexKitMethodLocator.isFullyHydrated(cached, cachedTargets)) {
-                    mModule.log(Log.INFO, TAG, "DexKit targets restored from cache; skipped full scan");
+                    com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.INFO, TAG, "DexKit targets restored from cache; skipped full scan");
                     return cachedTargets;
                 }
-                mModule.log(Log.WARN, TAG, "DexKit cache hydration incomplete; running full DexKit scan and refreshing cache");
+                com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "DexKit cache hydration incomplete; running full DexKit scan and refreshing cache");
                 mDexKitCache.invalidate(context);
             }
         } else {
-            mModule.log(Log.WARN, TAG, "DexKit cache lookup skipped: application context not yet available");
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "DexKit cache lookup skipped: application context not yet available");
         }
         DexKitTargetDescriptors descriptors = DexKitMethodLocator.query(apkPath, mModule);
         DexKitHookTargets targets = DexKitMethodLocator.hydrate(descriptors, classLoader, mModule);
@@ -122,11 +122,11 @@ final class PayCardHookInstaller {
     private boolean installHookGroup(@NonNull String label, @NonNull InstallAction action) {
         try {
             action.run();
-            mModule.log(Log.INFO, TAG, label + " installed");
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.INFO, TAG, label + " installed");
             return true;
         } catch (Throwable throwable) {
             mSnapshotStore.recordInstallError(label, throwable);
-            mModule.log(Log.ERROR, TAG, "failed to install " + label + ": " + Log.getStackTraceString(throwable));
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.ERROR, TAG, "failed to install " + label + ": " + Log.getStackTraceString(throwable));
             return false;
         }
     }

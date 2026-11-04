@@ -46,7 +46,7 @@ internal class DexKitTargetsCache(private val module: XposedModule) {
      */
     fun load(context: Context, hostPackageName: String): DexKitTargetDescriptors? {
         val expected = buildVersionKey(context, hostPackageName) ?: run {
-            module.log(Log.WARN, TAG, "DexKit cache load skipped: cannot resolve version key")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "DexKit cache load skipped: cannot resolve version key")
             return null
         }
         val rawJson = runCatching {
@@ -58,10 +58,10 @@ internal class DexKitTargetsCache(private val module: XposedModule) {
             )
             response?.getString(HookEnvironment.EXTRA_DEXKIT_CACHE_JSON).orEmpty()
         }.onFailure {
-            module.log(Log.WARN, TAG, "DexKit cache load failed: ${it.stackTraceToString()}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "DexKit cache load failed: ${it.stackTraceToString()}")
         }.getOrDefault("")
         if (rawJson.isBlank()) {
-            module.log(Log.INFO, TAG, "DexKit cache miss: empty payload")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.INFO, TAG, "DexKit cache miss: empty payload")
             return null
         }
         return runCatching {
@@ -73,28 +73,22 @@ internal class DexKitTargetsCache(private val module: XposedModule) {
                 cachedHostName != expected.hostVersionName ||
                 cachedModuleCode != expected.moduleVersionCode
             ) {
-                module.log(
-                    Log.INFO,
-                    TAG,
-                    "DexKit cache invalidated: cached=$cachedHostCode/$cachedHostName/$cachedModuleCode " +
+                com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.INFO, TAG, "DexKit cache invalidated: cached=$cachedHostCode/$cachedHostName/$cachedModuleCode " +
                         "current=${expected.hostVersionCode}/${expected.hostVersionName}/${expected.moduleVersionCode}"
                 )
                 return@runCatching null
             }
             val descriptors = DexKitTargetDescriptors.fromJson(root.optJSONObject(KEY_DESCRIPTORS))
             if (descriptors.isEmpty()) {
-                module.log(Log.INFO, TAG, "DexKit cache hit but descriptors empty; treating as miss")
+                com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.INFO, TAG, "DexKit cache hit but descriptors empty; treating as miss")
                 null
             } else {
-                module.log(
-                    Log.INFO,
-                    TAG,
-                    "DexKit cache hit: cachedAt=${root.optLong(KEY_CACHED_AT, 0L)} versionKey=$expected"
+                com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.INFO, TAG, "DexKit cache hit: cachedAt=${root.optLong(KEY_CACHED_AT, 0L)} versionKey=$expected"
                 )
                 descriptors
             }
         }.onFailure {
-            module.log(Log.WARN, TAG, "DexKit cache parse failed: ${it.stackTraceToString()}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "DexKit cache parse failed: ${it.stackTraceToString()}")
         }.getOrNull()
     }
 
@@ -105,11 +99,11 @@ internal class DexKitTargetsCache(private val module: XposedModule) {
      */
     fun save(context: Context, hostPackageName: String, descriptors: DexKitTargetDescriptors) {
         if (descriptors.isEmpty()) {
-            module.log(Log.INFO, TAG, "DexKit cache save skipped: descriptors empty")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.INFO, TAG, "DexKit cache save skipped: descriptors empty")
             return
         }
         val versionKey = buildVersionKey(context, hostPackageName) ?: run {
-            module.log(Log.WARN, TAG, "DexKit cache save skipped: cannot resolve version key")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "DexKit cache save skipped: cannot resolve version key")
             return
         }
         val payload = JSONObject().apply {
@@ -128,9 +122,9 @@ internal class DexKitTargetsCache(private val module: XposedModule) {
                     putString(HookEnvironment.EXTRA_DEXKIT_CACHE_JSON, payload.toString())
                 }
             )
-            module.log(Log.INFO, TAG, "DexKit cache saved versionKey=$versionKey")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.INFO, TAG, "DexKit cache saved versionKey=$versionKey")
         }.onFailure {
-            module.log(Log.WARN, TAG, "DexKit cache save failed: ${it.stackTraceToString()}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "DexKit cache save failed: ${it.stackTraceToString()}")
         }
     }
 
@@ -143,9 +137,9 @@ internal class DexKitTargetsCache(private val module: XposedModule) {
                 null,
                 Bundle()
             )
-            module.log(Log.INFO, TAG, "DexKit cache invalidated by request")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.INFO, TAG, "DexKit cache invalidated by request")
         }.onFailure {
-            module.log(Log.WARN, TAG, "DexKit cache invalidate failed: ${it.stackTraceToString()}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "DexKit cache invalidate failed: ${it.stackTraceToString()}")
         }
     }
 
@@ -153,12 +147,12 @@ internal class DexKitTargetsCache(private val module: XposedModule) {
         val packageManager = context.packageManager ?: return null
         val hostInfo = runCatching { packageManager.getPackageInfo(hostPackageName, 0) }
             .getOrElse {
-                module.log(Log.WARN, TAG, "host package info missing: ${it.message}")
+                com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "host package info missing: ${it.message}")
                 return null
             }
         val moduleInfo = runCatching { packageManager.getPackageInfo(HookEnvironment.MODULE_PACKAGE, 0) }
             .getOrElse {
-                module.log(Log.WARN, TAG, "module package info missing: ${it.message}")
+                com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "module package info missing: ${it.message}")
                 return null
             }
         return VersionKey(

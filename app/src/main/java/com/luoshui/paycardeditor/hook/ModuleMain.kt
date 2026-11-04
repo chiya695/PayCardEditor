@@ -2,11 +2,12 @@ package com.luoshui.paycardeditor.hook
 
 import android.util.Log
 import com.luoshui.paycardeditor.core.HookEnvironment
+import io.github.libxposed.api.XposedContext
 import io.github.libxposed.api.XposedModule
 import io.github.libxposed.api.XposedModuleInterface.ModuleLoadedParam
-import io.github.libxposed.api.XposedModuleInterface.PackageReadyParam
+import io.github.libxposed.api.XposedModuleInterface.PackageLoadedParam
 
-class ModuleMain : XposedModule() {
+class ModuleMain(base: XposedContext, param: ModuleLoadedParam) : XposedModule(base, param) {
 
     companion object {
         private const val TAG = "PayCardEditorHook"
@@ -16,26 +17,18 @@ class ModuleMain : XposedModule() {
     }
 
     private val installer = PayCardHookInstaller(this)
-    @Volatile private var processName: String = ""
+    private val processName = param.processName
 
-    override fun onModuleLoaded(param: ModuleLoadedParam) {
-        processName = param.processName
-        log(Log.INFO, TAG, "module loaded in ${param.processName}; framework=$frameworkName $frameworkVersion")
+    init {
+        HookCompat.log(this, Log.INFO, TAG, "module loaded in $processName; framework=$frameworkName $frameworkVersion")
     }
 
-    override fun onPackageReady(param: PackageReadyParam) {
-        if (!param.isFirstPackage || param.packageName != HookEnvironment.TARGET_PACKAGE) {
-            return
-        }
-        // Skip non-main processes (e.g. `com.miui.tsmclient:daemon`). They only host MiPush
-        // SDK services and a binder-forwarding `DaemonService`; none of our hook targets
-        // (CardInfoManager, BankCardInfo, Glide cache, etc.) execute there, while running
-        // DexKit's native scan in those subprocesses has triggered SIGABRT crashes.
+    override fun onPackageLoaded(param: PackageLoadedParam) {
+        if (!param.isFirstPackage || param.packageName != HookEnvironment.TARGET_PACKAGE) return
         if (processName.isNotEmpty() && processName != HookEnvironment.TARGET_PACKAGE) {
-            log(Log.INFO, TAG, "skip hook install in subprocess $processName")
+            HookCompat.log(this, Log.INFO, TAG, "skip hook install in subprocess $processName")
             return
         }
-        installer.install(param.classLoader, param.applicationInfo.sourceDir.orEmpty())
+        installer.install(param.classLoader, param.appInfo.sourceDir.orEmpty())
     }
-
 }

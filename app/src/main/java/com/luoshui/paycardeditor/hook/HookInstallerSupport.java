@@ -29,9 +29,9 @@ public final class HookInstallerSupport {
         method.setAccessible(true);
         try {
             boolean deoptimized = mModule.deoptimize(method);
-            mModule.log(Log.DEBUG, TAG, label + " deoptimize=" + deoptimized);
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.DEBUG, TAG, label + " deoptimize=" + deoptimized);
         } catch (Throwable ignored) {
-            mModule.log(Log.DEBUG, TAG, label + " deoptimize skipped");
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.DEBUG, TAG, label + " deoptimize skipped");
         }
     }
 
@@ -39,9 +39,9 @@ public final class HookInstallerSupport {
         try {
             action.run();
         } catch (UnsupportedOperationException exception) {
-            mModule.log(Log.ERROR, TAG, "suppressed read-only host failure in " + source + ": " + Log.getStackTraceString(exception));
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.ERROR, TAG, "suppressed read-only host failure in " + source + ": " + Log.getStackTraceString(exception));
         } catch (Throwable throwable) {
-            mModule.log(Log.ERROR, TAG, "suppressed hook side effect failure in " + source + ": " + Log.getStackTraceString(throwable));
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.ERROR, TAG, "suppressed hook side effect failure in " + source + ": " + Log.getStackTraceString(throwable));
         }
     }
 

@@ -123,7 +123,7 @@ internal object DexKitMethodLocator {
     @JvmStatic
     fun query(apkPath: String, module: XposedModule): DexKitTargetDescriptors {
         if (apkPath.isBlank()) {
-            module.log(Log.WARN, TAG, "skip DexKit lookup: empty apk path")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "skip DexKit lookup: empty apk path")
             return DexKitTargetDescriptors()
         }
         return runCatching {
@@ -149,9 +149,9 @@ internal object DexKitMethodLocator {
                 DexKitBridgeLifetime.retain(bridge)
             }
         }.onFailure {
-            module.log(Log.WARN, TAG, "DexKit lookup failed: ${it.stackTraceToString()}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "DexKit lookup failed: ${it.stackTraceToString()}")
         }.getOrDefault(DexKitTargetDescriptors()).also { descriptors ->
-            module.log(Log.INFO, TAG, "DexKit query produced descriptors: ${descriptors.toJson()}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.INFO, TAG, "DexKit query produced descriptors: ${descriptors.toJson()}")
         }
     }
 
@@ -177,10 +177,7 @@ internal object DexKitMethodLocator {
             glideDiskCachePut = descriptors.glideDiskCachePut.toMethodOrNull(classLoader, module, "glideDiskCachePut"),
             glideEngineClass = descriptors.glideEngineClass.toClassOrNull(classLoader, module, "glideEngineClass"),
         )
-        module.log(
-            Log.INFO,
-            TAG,
-            "DexKit hydrated targets: bankO=${targets.bankVirtualCardMerge?.declaringClass?.name}.${targets.bankVirtualCardMerge?.name}, " +
+        com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.INFO, TAG, "DexKit hydrated targets: bankO=${targets.bankVirtualCardMerge?.declaringClass?.name}.${targets.bankVirtualCardMerge?.name}, " +
                 "bankN=${targets.bankQueryPanMerge?.declaringClass?.name}.${targets.bankQueryPanMerge?.name}, " +
                 "transit=${targets.transitUpdateBackground?.declaringClass?.name}.${targets.transitUpdateBackground?.name}, " +
                 "mifare=${targets.mifareQuery?.declaringClass?.name}.${targets.mifareQuery?.name}, " +
@@ -413,7 +410,7 @@ internal object DexKitMethodLocator {
         return runCatching {
             DexMethod(this).getMethodInstance(classLoader)
         }.onFailure {
-            module.log(Log.WARN, TAG, "DexKit hydrate $label failed: descriptor=$this err=${it.message}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "DexKit hydrate $label failed: descriptor=$this err=${it.message}")
         }.getOrNull()
     }
 
@@ -426,7 +423,7 @@ internal object DexKitMethodLocator {
         return runCatching {
             DexClass(this).getInstance(classLoader)
         }.onFailure {
-            module.log(Log.WARN, TAG, "DexKit hydrate $label failed: descriptor=$this err=${it.message}")
+            com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "DexKit hydrate $label failed: descriptor=$this err=${it.message}")
         }.getOrNull()
     }
 }

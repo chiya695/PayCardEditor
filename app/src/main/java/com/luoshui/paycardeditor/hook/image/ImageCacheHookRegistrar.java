@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import io.github.libxposed.api.XposedInterface.ExceptionMode;
+import com.luoshui.paycardeditor.hook.HookCompat;
 import io.github.libxposed.api.XposedModule;
 
 public final class ImageCacheHookRegistrar {
@@ -111,13 +111,11 @@ public final class ImageCacheHookRegistrar {
         try {
             Method generateToken = dexKitTargets.getGlideTokenGenerate();
             if (generateToken == null) {
-                mModule.log(Log.WARN, TAG, "Glide token hook install skipped: DexKit did not resolve Md5FileNameGenerator.generate");
+                com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "Glide token hook install skipped: DexKit did not resolve Md5FileNameGenerator.generate");
                 return;
             }
             mSupport.prepareMethod(generateToken, "Md5FileNameGenerator.generate");
-            mModule.hook(generateToken)
-                    .setExceptionMode(ExceptionMode.PROTECTIVE)
-                    .intercept(chain -> {
+            HookCompat.hook(mModule, generateToken, chain -> {
                         Object input = chain.getArg(0);
                         Object result = chain.proceed();
                         if (input instanceof String && result instanceof String) {
@@ -127,7 +125,7 @@ public final class ImageCacheHookRegistrar {
                     });
             mSupport.recordInstalledHook(HookCatalog.GLIDE_TOKEN_GENERATE, generateToken);
         } catch (Throwable throwable) {
-            mModule.log(Log.WARN, TAG, "Glide token hook install failed: " + Log.getStackTraceString(throwable));
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "Glide token hook install failed: " + Log.getStackTraceString(throwable));
         }
     }
 
@@ -145,10 +143,10 @@ public final class ImageCacheHookRegistrar {
             putToDiskCache = HookReflectionUtils.findDiskCacheMethod(diskCacheWrapperClass, Void.TYPE, 2);
         }
         if (getFromDiskCache == null || putToDiskCache == null) {
-            mModule.log(Log.WARN, TAG, "Glide disk cache candidates: " + HookReflectionUtils.describeMethods(diskCacheWrapperClass));
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "Glide disk cache candidates: " + HookReflectionUtils.describeMethods(diskCacheWrapperClass));
             throw new IllegalStateException("DexKit did not resolve Glide disk cache methods");
         }
-        mModule.log(Log.INFO, TAG, "Glide disk cache hooks target: get="
+        com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.INFO, TAG, "Glide disk cache hooks target: get="
                 + getFromDiskCache.getDeclaringClass().getName()
                 + '#'
                 + getFromDiskCache.getName()
@@ -160,9 +158,7 @@ public final class ImageCacheHookRegistrar {
 
         Method finalGetFromDiskCache = getFromDiskCache;
         mSupport.prepareMethod(finalGetFromDiskCache, "DiskLruCacheWrapper.get");
-        mModule.hook(finalGetFromDiskCache)
-                .setExceptionMode(ExceptionMode.PROTECTIVE)
-                .intercept(chain -> {
+        HookCompat.hook(mModule, finalGetFromDiskCache, chain -> {
                     CacheReplacementTarget replacementTarget = resolveCacheReplacementTarget(chain.getArg(0));
                     if (replacementTarget != null) {
                         File pinnedFile = ensureDiskCacheEntryReplaced(chain.getThisObject(), chain.getArg(0), replacementTarget);
@@ -174,9 +170,7 @@ public final class ImageCacheHookRegistrar {
 
         Method finalPutToDiskCache = putToDiskCache;
         mSupport.prepareMethod(finalPutToDiskCache, "DiskLruCacheWrapper.put");
-        mModule.hook(finalPutToDiskCache)
-                .setExceptionMode(ExceptionMode.PROTECTIVE)
-                .intercept(chain -> {
+        HookCompat.hook(mModule, finalPutToDiskCache, chain -> {
                     CacheReplacementTarget replacementTarget = resolveCacheReplacementTarget(chain.getArg(0));
                     if (replacementTarget != null) {
                         ensureDiskCacheEntryReplaced(chain.getThisObject(), chain.getArg(0), replacementTarget);
@@ -191,28 +185,26 @@ public final class ImageCacheHookRegistrar {
         try {
             Class<?> diskLruCacheClass = DiskLruCacheReflector.resolveDiskLruCacheClass(diskCacheWrapperClass);
             if (diskLruCacheClass == null) {
-                mModule.log(Log.WARN, TAG, "Unable to resolve DiskLruCache backend class for removal hook");
+                com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "Unable to resolve DiskLruCache backend class for removal hook");
                 return;
             }
             Method removeMethod = HookReflectionUtils.findMethodBySignature(diskLruCacheClass, Boolean.TYPE, String.class);
             if (removeMethod == null) {
-                mModule.log(Log.WARN, TAG, "Unable to resolve DiskLruCache remove method in " + diskLruCacheClass.getName());
+                com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "Unable to resolve DiskLruCache remove method in " + diskLruCacheClass.getName());
                 return;
             }
             mSupport.prepareMethod(removeMethod, "DiskLruCache.remove");
-            mModule.hook(removeMethod)
-                    .setExceptionMode(ExceptionMode.PROTECTIVE)
-                    .intercept(chain -> {
+            HookCompat.hook(mModule, removeMethod, chain -> {
                         Object key = chain.getArg(0);
                         if (key instanceof String && isProtectedSafeKey((String) key)) {
-                            mModule.log(Log.INFO, TAG, "Glide disk cache remove blocked: safeKey=" + key);
+                            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.INFO, TAG, "Glide disk cache remove blocked: safeKey=" + key);
                             return false;
                         }
                         return chain.proceed();
                     });
             mSupport.recordInstalledHook(HookCatalog.GLIDE_DISK_REMOVE, removeMethod);
         } catch (Throwable throwable) {
-            mModule.log(Log.WARN, TAG, "DiskLruCache remove hook install failed: " + Log.getStackTraceString(throwable));
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "DiskLruCache remove hook install failed: " + Log.getStackTraceString(throwable));
         }
     }
 
@@ -251,7 +243,7 @@ public final class ImageCacheHookRegistrar {
         File mirrorFile = PinnedAssetMirror.ensure(replacementTarget.assetId, replacementTarget.assetUri);
         String safeKey = DiskLruCacheReflector.resolveSafeKey(diskCacheWrapper, diskCacheKey);
         if (safeKey == null || safeKey.isEmpty()) {
-            mModule.log(Log.WARN, TAG, "Unable to resolve disk cache safe key for key=" + diskCacheKey);
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "Unable to resolve disk cache safe key for key=" + diskCacheKey);
             return mirrorFile;
         }
         // Serialize concurrent replace operations against the same safeKey so that one thread
@@ -280,7 +272,7 @@ public final class ImageCacheHookRegistrar {
                 mProtectedSafeKeyMap.put(safeKey, replacementTarget);
             }
             mLastReplacementTimestampMap.put(safeKey, System.currentTimeMillis());
-            mModule.log(Log.INFO, TAG, "Glide disk cache file replaced: safeKey="
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.INFO, TAG, "Glide disk cache file replaced: safeKey="
                     + safeKey
                     + " remoteUrl="
                     + replacementTarget.remoteUrl

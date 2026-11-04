@@ -114,14 +114,14 @@ public final class ReplacementMapStore {
                         @Override
                         public void onChange(boolean selfChange, Uri changedUri) {
                             mLoadedAt = 0L;
-                            mModule.log(Log.DEBUG, TAG, "Replacement map invalidated by editor: uri=" + changedUri);
+                            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.DEBUG, TAG, "Replacement map invalidated by editor: uri=" + changedUri);
                         }
                     }
             );
-            mModule.log(Log.INFO, TAG, "Replacement map invalidation observer registered");
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.INFO, TAG, "Replacement map invalidation observer registered");
         } catch (Throwable throwable) {
             mObserverRegistered.set(false);
-            mModule.log(Log.WARN, TAG, "register replacement map observer failed: " + Log.getStackTraceString(throwable));
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "register replacement map observer failed: " + Log.getStackTraceString(throwable));
         }
     }
 
@@ -208,10 +208,10 @@ public final class ReplacementMapStore {
                 CacheReplacementTarget replacementTarget = new CacheReplacementTarget(remoteUrl, assetId, assetUri);
                 addReplacementLookupKeys(result, snapshot, replacementTarget);
             }
-            mModule.log(Log.INFO, TAG, "Loaded image cache replacement map entries=" + result.size());
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.INFO, TAG, "Loaded image cache replacement map entries=" + result.size());
             return result;
         } catch (Throwable throwable) {
-            mModule.log(Log.WARN, TAG, "load cache replacement map failed: " + Log.getStackTraceString(throwable));
+            com.luoshui.paycardeditor.hook.HookCompat.log(mModule, Log.WARN, TAG, "load cache replacement map failed: " + Log.getStackTraceString(throwable));
             return Collections.emptyMap();
         }
     }

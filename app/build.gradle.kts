@@ -162,7 +162,8 @@ dependencies {
     implementation(libs.coil.compose)
 
     compileOnly(libs.libxposed.api)
-    implementation(libs.libxposed.service)
+    compileOnly("io.github.libxposed:interface:100")
+    compileOnly(libs.libxposed.service)
     testImplementation(libs.junit)
     testImplementation(libs.robolectric)
     testImplementation(libs.androidx.compose.ui.test.junit4)
