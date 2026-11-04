@@ -162,8 +162,9 @@ dependencies {
     implementation(libs.coil.compose)
 
     compileOnly(libs.libxposed.api)
-    compileOnly("io.github.libxposed:interface:100")
-    compileOnly(libs.libxposed.service)
+    // API 100 interface is bundled as classes-only to avoid duplicate AAR manifest namespaces.
+    implementation(files("libs/libxposed-interface-100.jar"))
+    implementation(libs.libxposed.service) { exclude(group = "io.github.libxposed", module = "interface") }
     testImplementation(libs.junit)
     testImplementation(libs.robolectric)
     testImplementation(libs.androidx.compose.ui.test.junit4)
