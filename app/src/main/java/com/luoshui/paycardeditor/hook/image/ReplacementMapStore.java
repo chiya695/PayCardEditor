@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import io.github.libxposed.api.XposedModule;
+import com.luoshui.paycardeditor.hook.HookRuntime;
 
 /**
  * Owns the {@code lookupKey → CacheReplacementTarget} map and the 5-second TTL refresh
@@ -48,12 +48,12 @@ public final class ReplacementMapStore {
             Uri.parse("content://" + HookEnvironment.SNAPSHOT_PROVIDER_AUTHORITY
                     + "/" + HookEnvironment.PATH_BANK_RULES);
 
-    private final XposedModule mModule;
+    private final HookRuntime mModule;
     private final AtomicBoolean mObserverRegistered = new AtomicBoolean(false);
     private volatile long mLoadedAt = 0L;
     private volatile Map<String, CacheReplacementTarget> mMap = Collections.emptyMap();
 
-    public ReplacementMapStore(@NonNull XposedModule module) {
+    public ReplacementMapStore(@NonNull HookRuntime module) {
         mModule = module;
     }
 

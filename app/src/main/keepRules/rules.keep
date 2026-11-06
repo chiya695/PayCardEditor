@@ -1,30 +1,7 @@
-# Add project specific R8 rules here.
-# AGP will combine all keep rule files in src/main/keepRules to pass to R8.
-#
-# For more details, see
-#   https://d.android.com/r/tools/r8/keep-rules
-
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
-
-# --- Xposed ---
--adaptresourcefilecontents META-INF/xposed/java_init.list
-
--keep,allowobfuscation,allowoptimization public class * extends io.github.libxposed.api.XposedModule {
-    public <init>(...);
-    public void onModuleLoaded(...);
-    public void onPackageLoaded(...);
-    public void onPackageReady(...);
-    public void onSystemServerStarting(...);
-}
--keep,allowshrinking,allowoptimization,allowobfuscation class ** implements io.github.libxposed.api.XposedInterface$Hooker
--keepclassmembers,allowoptimization class ** implements io.github.libxposed.api.XposedInterface$Hooker {
-    public *** intercept(...);
-}
+# Keep the legacy Xposed entry point and hooks.
+-keep class com.luoshui.paycardeditor.hook.ModuleMain { public <init>(); *; }
+-keep class * implements de.robv.android.xposed.IXposedHookLoadPackage { *; }
+-keep class * extends de.robv.android.xposed.XC_MethodHook { *; }
 
 # Third-party libs that resolve members reflectively at runtime.
 -keep class org.luckypray.dexkit.** { *; }

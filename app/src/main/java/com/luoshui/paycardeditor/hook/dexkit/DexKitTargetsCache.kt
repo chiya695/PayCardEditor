@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.core.net.toUri
 import com.luoshui.paycardeditor.core.HookEnvironment
-import io.github.libxposed.api.XposedModule
+import com.luoshui.paycardeditor.hook.HookRuntime
 import org.json.JSONObject
 
 /**
@@ -25,7 +25,7 @@ import org.json.JSONObject
  * caller is expected to fall back to a full DexKit query. We never let cache problems
  * abort hook installation.
  */
-internal class DexKitTargetsCache(private val module: XposedModule) {
+internal class DexKitTargetsCache(private val module: HookRuntime) {
 
     companion object {
         private const val TAG = "PayCardEditorHook"

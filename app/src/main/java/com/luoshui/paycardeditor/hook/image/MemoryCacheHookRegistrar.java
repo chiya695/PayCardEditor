@@ -16,7 +16,7 @@ import java.util.Collections;
 import java.util.Map;
 
 import com.luoshui.paycardeditor.hook.HookCompat;
-import io.github.libxposed.api.XposedModule;
+import com.luoshui.paycardeditor.hook.HookRuntime;
 
 /**
  * Hooks Glide's in-memory cache lookup so that the very first frame after returning to a
@@ -59,12 +59,12 @@ public final class MemoryCacheHookRegistrar {
 
     private static final String TAG = "PayCardEditorHook";
 
-    private final XposedModule mModule;
+    private final HookRuntime mModule;
     private final HookInstallerSupport mSupport;
     private final ReplacementMapStore mReplacementStore;
 
     public MemoryCacheHookRegistrar(
-            @NonNull XposedModule module,
+            @NonNull HookRuntime module,
             @NonNull HookInstallerSupport support,
             @NonNull ReplacementMapStore replacementStore
     ) {

@@ -14,6 +14,9 @@ import android.content.Context
 import io.github.libxposed.service.XposedService
 import org.json.JSONArray
 import org.json.JSONObject
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 object ModuleStateRepository {
 
@@ -23,8 +26,8 @@ object ModuleStateRepository {
         if (cardState.cards.isEmpty() && cardState.warning.isBlank()) {
             cardState = cardState.copy(
                 warning = when (moduleStatus.level) {
-                    ModuleStatusLevel.ACTIVE -> "模块已经接入 libxposed，但还没有收到卡片快照。先打开一次小米钱包卡片页，再回到这里刷新。"
-                    ModuleStatusLevel.WAITING -> "等待 libxposed 服务连接后，才能读取远程卡片快照。"
+                    ModuleStatusLevel.ACTIVE -> "已收到 Hook 初始化上报，但还没有卡片快照。先打开一次小米钱包卡片页，再回到这里刷新。"
+                    ModuleStatusLevel.WAITING -> "尚未检测到 Hook 上报。打开一次小米钱包卡片页，再回到这里刷新。"
                     ModuleStatusLevel.INACTIVE -> "先在框架里勾选 com.miui.tsmclient 作用域并重启目标进程，Hook 才会开始上报卡片信息。"
                 }
             )
@@ -48,11 +51,7 @@ object ModuleStateRepository {
     }
 
     private fun loadModuleStatus(): ModuleStatusState {
-        val service = App.xposedService ?: return ModuleStatusState(
-            level = ModuleStatusLevel.WAITING,
-            title = "等待连接",
-            detail = "尚未连接到 libxposed 服务。确认模块已经启用，然后重新进入此页。",
-        )
+        val service = App.xposedService ?: return loadLegacyHookStatus()
         val frameworkLabel = readFrameworkLabel(service)
         val scope = runCatching { service.scope.toSet() }.getOrDefault(emptySet())
         return if (HookEnvironment.TARGET_PACKAGE in scope) {
@@ -69,6 +68,31 @@ object ModuleStateRepository {
                 detail = "$frameworkLabel\n$scopeSummary",
             )
         }
+    }
+
+    /**
+     * LSPosed 1.x loads the legacy XposedBridge entry point but does not necessarily expose
+     * libxposed's service API. Use the hook process's persisted initialization report as the
+     * activation signal instead of treating a missing libxposed Binder connection as Hook failure.
+     */
+    private fun loadLegacyHookStatus(): ModuleStatusState {
+        val context = App.appContext
+        val prefs = context?.getSharedPreferences(HookEnvironment.LOCAL_STATE_PREFS_NAME, Context.MODE_PRIVATE)
+        val reportedAt = prefs?.getLong(HookEnvironment.PREF_KEY_TROUBLESHOOT_UPDATED_AT, 0L) ?: 0L
+        if (reportedAt <= 0L) {
+            return ModuleStatusState(
+                level = ModuleStatusLevel.WAITING,
+                title = "等待 Hook 上报",
+                detail = "当前未连接 libxposed 服务，且尚未收到钱包进程的 Hook 初始化上报。打开一次小米钱包卡片页后再回来刷新。",
+            )
+        }
+
+        val formattedTime = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date(reportedAt))
+        return ModuleStatusState(
+            level = ModuleStatusLevel.ACTIVE,
+            title = "旧版 Hook 已上报",
+            detail = "最近一次钱包进程 Hook 初始化上报：$formattedTime\n当前未连接 libxposed 服务；LSPosed 1.x 下这不代表旧版 Xposed Hook 未运行。",
+        )
     }
 
     private fun loadCardState(): CardSnapshotState {

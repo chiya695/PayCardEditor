@@ -14,18 +14,18 @@ import java.lang.reflect.Method;
 import java.util.Locale;
 import java.util.Map;
 
-import io.github.libxposed.api.XposedModule;
+import com.luoshui.paycardeditor.hook.HookRuntime;
 
 public final class HookDebugReporter {
 
     private static final String MISSING_PLACEHOLDER = "(void*)0";
 
-    private final XposedModule mModule;
+    private final HookRuntime mModule;
     private final RemoteCardSnapshotStore mSnapshotStore;
     private final HookInstallerSupport mSupport;
 
     public HookDebugReporter(
-            @NonNull XposedModule module,
+            @NonNull HookRuntime module,
             @NonNull RemoteCardSnapshotStore snapshotStore,
             @NonNull HookInstallerSupport support
     ) {
@@ -58,7 +58,7 @@ public final class HookDebugReporter {
                 .append(", UID: ").append(Process.myUid())
                 .append(", ISA: ").append(resolveIsaName())
                 .append('\n');
-        builder.append("Xposed API version: ").append(mModule.getAPIVersion()).append('\n');
+        builder.append("Xposed API version: ").append(mModule.getApiVersion()).append('\n');
         builder.append("module: ").append(apkPath).append('\n');
         builder.append(mModule.getClass().getName())
                 .append(' ')

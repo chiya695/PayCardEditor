@@ -104,7 +104,7 @@ android {
             useLegacyPackaging = false
         }
         resources {
-            merges += "META-INF/xposed/*"
+            excludes += "META-INF/xposed/**"
         }
     }
     testOptions {
@@ -162,6 +162,7 @@ dependencies {
     implementation(libs.coil.compose)
 
     compileOnly(libs.libxposed.api)
+    compileOnly("de.robv.android.xposed:api:82")
     // API 100 interface is bundled as classes-only to avoid duplicate AAR manifest namespaces.
     implementation(files("libs/libxposed-interface-100.jar"))
     implementation(libs.libxposed.service) { exclude(group = "io.github.libxposed", module = "interface") }

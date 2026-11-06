@@ -139,4 +139,5 @@
     <string name="error_save_crop_config_failed">保存裁剪配置失败</string>
     <string name="error_save_appearance_failed">保存外观设置失败，请稍后重试</string>
     <string name="error_load_troubleshoot_failed">加载诊断信息失败</string>
+    <string name="xposed_description">Customize card artwork in Mi Wallet</string>
 </resources>

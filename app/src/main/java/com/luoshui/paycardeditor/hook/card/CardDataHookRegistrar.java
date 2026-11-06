@@ -18,17 +18,17 @@ import java.util.Collection;
 import java.util.List;
 
 import com.luoshui.paycardeditor.hook.HookCompat;
-import io.github.libxposed.api.XposedModule;
+import com.luoshui.paycardeditor.hook.HookRuntime;
 
 public final class CardDataHookRegistrar {
 
-    private final XposedModule mModule;
+    private final HookRuntime mModule;
     private final RemoteCardSnapshotStore mSnapshotStore;
     private final BankCardReplacer mBankCardReplacer;
     private final HookInstallerSupport mSupport;
 
     public CardDataHookRegistrar(
-            @NonNull XposedModule module,
+            @NonNull HookRuntime module,
             @NonNull RemoteCardSnapshotStore snapshotStore,
             @NonNull BankCardReplacer bankCardReplacer,
             @NonNull HookInstallerSupport support

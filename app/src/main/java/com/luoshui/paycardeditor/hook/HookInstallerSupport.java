@@ -11,16 +11,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import io.github.libxposed.api.XposedModule;
+import com.luoshui.paycardeditor.hook.HookRuntime;
 
 public final class HookInstallerSupport {
 
     private static final String TAG = "PayCardEditorHook";
 
-    private final XposedModule mModule;
+    private final HookRuntime mModule;
     private final List<HookRecord> mInstalledHookRecords;
 
-    HookInstallerSupport(@NonNull XposedModule module, @NonNull List<HookRecord> installedHookRecords) {
+    HookInstallerSupport(@NonNull HookRuntime module, @NonNull List<HookRecord> installedHookRecords) {
         mModule = module;
         mInstalledHookRecords = installedHookRecords;
     }

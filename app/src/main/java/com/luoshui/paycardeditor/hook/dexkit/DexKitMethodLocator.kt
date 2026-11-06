@@ -1,7 +1,7 @@
 package com.luoshui.paycardeditor.hook.dexkit
 
 import android.util.Log
-import io.github.libxposed.api.XposedModule
+import com.luoshui.paycardeditor.hook.HookRuntime
 import org.json.JSONObject
 import org.luckypray.dexkit.DexKitBridge
 import org.luckypray.dexkit.wrap.DexClass
@@ -111,7 +111,7 @@ internal object DexKitMethodLocator {
      * [query] + [hydrate] when results need to be cached across invocations.
      */
     @JvmStatic
-    fun resolve(apkPath: String, classLoader: ClassLoader, module: XposedModule): DexKitHookTargets {
+    fun resolve(apkPath: String, classLoader: ClassLoader, module: HookRuntime): DexKitHookTargets {
         val descriptors = query(apkPath, module)
         return hydrate(descriptors, classLoader, module)
     }
@@ -121,7 +121,7 @@ internal object DexKitMethodLocator {
      * empty bundle when the apk path is missing or the bridge fails to open.
      */
     @JvmStatic
-    fun query(apkPath: String, module: XposedModule): DexKitTargetDescriptors {
+    fun query(apkPath: String, module: HookRuntime): DexKitTargetDescriptors {
         if (apkPath.isBlank()) {
             com.luoshui.paycardeditor.hook.HookCompat.log(module, Log.WARN, TAG, "skip DexKit lookup: empty apk path")
             return DexKitTargetDescriptors()
@@ -164,7 +164,7 @@ internal object DexKitMethodLocator {
     fun hydrate(
         descriptors: DexKitTargetDescriptors,
         classLoader: ClassLoader,
-        module: XposedModule,
+        module: HookRuntime,
     ): DexKitHookTargets {
         val targets = DexKitHookTargets(
             bankVirtualCardMerge = descriptors.bankVirtualCardMerge.toMethodOrNull(classLoader, module, "bankVirtualCardMerge"),
@@ -403,7 +403,7 @@ internal object DexKitMethodLocator {
 
     private fun String?.toMethodOrNull(
         classLoader: ClassLoader,
-        module: XposedModule,
+        module: HookRuntime,
         label: String,
     ): Method? {
         if (this.isNullOrBlank()) return null
@@ -416,7 +416,7 @@ internal object DexKitMethodLocator {
 
     private fun String?.toClassOrNull(
         classLoader: ClassLoader,
-        module: XposedModule,
+        module: HookRuntime,
         label: String,
     ): Class<*>? {
         if (this.isNullOrBlank()) return null

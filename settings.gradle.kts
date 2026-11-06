@@ -8,6 +8,7 @@ pluginManagement {
             }
         }
         mavenCentral()
+        maven { url = uri("https://api.xposed.info") }
         gradlePluginPortal()
     }
 }
@@ -19,6 +20,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://api.xposed.info") }
         // Optional local override for libxposed builds-from-source.
         // Maven Central is the primary source; mavenLocal is consulted only
         // when a developer publishes a custom snapshot locally.

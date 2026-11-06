@@ -18,13 +18,13 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.luoshui.paycardeditor.hook.HookCompat;
-import io.github.libxposed.api.XposedModule;
+import com.luoshui.paycardeditor.hook.HookRuntime;
 
 public final class ImageCacheHookRegistrar {
 
     private static final String TAG = "PayCardEditorHook";
 
-    private final XposedModule mModule;
+    private final HookRuntime mModule;
     private final HookInstallerSupport mSupport;
     private final ReplacementMapStore mReplacementStore;
     /**
@@ -39,7 +39,7 @@ public final class ImageCacheHookRegistrar {
     private final Map<String, Long> mLastReplacementTimestampMap = new ConcurrentHashMap<>();
 
     public ImageCacheHookRegistrar(
-            @NonNull XposedModule module,
+            @NonNull HookRuntime module,
             @NonNull HookInstallerSupport support,
             @NonNull ReplacementMapStore replacementStore
     ) {

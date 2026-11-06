@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.core.net.toUri
 import com.luoshui.paycardeditor.core.HookEnvironment
-import io.github.libxposed.api.XposedModule
+import com.luoshui.paycardeditor.hook.HookRuntime
 
 internal class BankCardRuleResolver(
-    private val module: XposedModule,
+    private val module: HookRuntime,
 ) {
     companion object {
         private const val TAG = "PayCardEditorHook"

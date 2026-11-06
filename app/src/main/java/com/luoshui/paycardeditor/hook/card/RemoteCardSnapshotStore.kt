@@ -8,11 +8,11 @@ import com.luoshui.paycardeditor.core.HookEnvironment
 import com.luoshui.paycardeditor.hook.HookProcessContext
 import com.luoshui.paycardeditor.model.CardSnapshot
 import com.luoshui.paycardeditor.model.firstNonBlank
-import io.github.libxposed.api.XposedModule
+import com.luoshui.paycardeditor.hook.HookRuntime
 import org.json.JSONArray
 
 internal class RemoteCardSnapshotStore(
-    private val module: XposedModule,
+    private val module: HookRuntime,
 ) {
     companion object {
         private const val TAG = "PayCardEditorHook"

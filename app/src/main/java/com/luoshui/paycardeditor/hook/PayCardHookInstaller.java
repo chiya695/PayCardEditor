@@ -21,13 +21,13 @@ import com.luoshui.paycardeditor.hook.image.ReplacementMapStore;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.github.libxposed.api.XposedModule;
+import com.luoshui.paycardeditor.hook.HookRuntime;
 
 final class PayCardHookInstaller {
 
     private static final String TAG = "PayCardEditorHook";
 
-    private final XposedModule mModule;
+    private final HookRuntime mModule;
     private final RemoteCardSnapshotStore mSnapshotStore;
     private final CardDataHookRegistrar mCardDataHooks;
     private final ImageCacheHookRegistrar mImageCacheHooks;
@@ -37,7 +37,7 @@ final class PayCardHookInstaller {
 
     private volatile boolean mInstalled = false;
 
-    PayCardHookInstaller(@NonNull XposedModule module) {
+    PayCardHookInstaller(@NonNull HookRuntime module) {
         mModule = module;
         mSnapshotStore = new RemoteCardSnapshotStore(module);
         BankCardReplacer bankCardReplacer = new BankCardReplacer(module);

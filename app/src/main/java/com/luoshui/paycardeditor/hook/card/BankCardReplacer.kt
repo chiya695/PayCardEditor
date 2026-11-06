@@ -4,10 +4,10 @@ package com.luoshui.paycardeditor.hook.card
 import android.content.Context
 import android.util.Log
 import com.luoshui.paycardeditor.hook.ReflectionCacheUtils
-import io.github.libxposed.api.XposedModule
+import com.luoshui.paycardeditor.hook.HookRuntime
 
 internal class BankCardReplacer(
-    private val module: XposedModule,
+    private val module: HookRuntime,
 ) {
     companion object {
         private const val TAG = "PayCardEditorHook"

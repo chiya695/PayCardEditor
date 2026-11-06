@@ -25,6 +25,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PayCardEditor">
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposedminversion" android:value="93" />
+        <meta-data android:name="xposeddescription" android:value="@string/xposed_description" />
         <activity
             android:name=".app.MainActivity"
             android:exported="true"
@@ -49,6 +52,10 @@
             android:name="com.yalantis.ucrop.UCropActivity"
             android:exported="false"
             android:theme="@style/Theme.PayCardEditor" />
+        <provider
+            android:name="io.github.libxposed.service.XposedProvider"
+            android:authorities="${applicationId}.XposedService"
+            android:exported="true" />
         <provider
             android:name=".data.SnapshotSyncProvider"
             android:authorities="com.luoshui.paycardeditor.snapshot"
