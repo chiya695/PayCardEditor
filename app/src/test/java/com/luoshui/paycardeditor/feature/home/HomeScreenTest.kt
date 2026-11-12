@@ -6,6 +6,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 import com.luoshui.paycardeditor.app.theme.PayCardTheme
 import com.luoshui.paycardeditor.model.CardSnapshotState
 import com.luoshui.paycardeditor.model.HomeState
@@ -30,10 +31,12 @@ class HomeScreenTest {
         renderStatus(
             level = ModuleStatusLevel.ACTIVE,
             title = "模块已激活",
-            detail = "LSPosed · 作用域已覆盖 com.miui.tsmclient",
+            detail = "已读取到 2 张卡片，功能正常，无需处理。",
         )
 
         assertOnlyStatus("已激活", "模块已激活")
+        rule.onNodeWithText("已读取到 2 张卡片，功能正常，无需处理。").assertIsDisplayed()
+        rule.onNodeWithText("已读取到 2 张卡片，功能正常，无需处理。").assertIsDisplayed()
     }
 
     @Test
@@ -82,6 +85,22 @@ class HomeScreenTest {
         rule.onNodeWithText("复制信息").assertIsDisplayed()
         rule.onNodeWithText("OK").performClick()
         assertTrue(dismissed)
+    }
+
+    @Test
+    fun `wallet refresh action explains manual force stop then opens app settings`() {
+        var received: HomeEvent? = null
+        rule.setContent {
+            PayCardTheme {
+                HomeScreen(uiState = HomeUiState(), onEvent = { received = it })
+            }
+        }
+
+        rule.onNodeWithText("刷新小米智能卡").performScrollTo().assertIsDisplayed().performClick()
+        rule.onNodeWithText("为什么要手动停止小米智能卡？").assertIsDisplayed()
+        rule.onNodeWithText("此按钮只会打开应用详情，不会自动停止应用。", substring = true).assertIsDisplayed()
+        rule.onNodeWithText("前往应用详情").performClick()
+        assertTrue(received == HomeEvent.OpenMiPayAppSettings)
     }
 
     private fun renderStatus(

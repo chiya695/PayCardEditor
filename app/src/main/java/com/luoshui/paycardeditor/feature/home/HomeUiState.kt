@@ -17,7 +17,7 @@ data class HomeUiState(
 /**
  * User events emitted by [HomeScreen].
  *
- * [OpenTroubleshoot] and [OpenMiPay] are handled by route lambdas because the
+ * [OpenTroubleshoot], [OpenMiPay], and [OpenMiPayAppSettings] are handled by route lambdas because the
  * ViewModel does not own an Activity or Intent. They remain in the event type
  * so the screen can expose one event callback.
  */
@@ -27,4 +27,5 @@ sealed interface HomeEvent {
     data object DismissSnapshotDetails : HomeEvent
     data object OpenTroubleshoot : HomeEvent
     data object OpenMiPay : HomeEvent
+    data object OpenMiPayAppSettings : HomeEvent
 }

@@ -58,6 +58,7 @@ class HomeViewModel(
             // Route lambdas handle navigation because the ViewModel has no Activity.
             HomeEvent.OpenTroubleshoot -> Unit
             HomeEvent.OpenMiPay -> Unit
+            HomeEvent.OpenMiPayAppSettings -> Unit
         }
     }
 

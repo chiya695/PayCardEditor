@@ -14,27 +14,14 @@ import android.content.Context
 import io.github.libxposed.service.XposedService
 import org.json.JSONArray
 import org.json.JSONObject
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 object ModuleStateRepository {
 
     fun loadHomeState(): HomeState {
-        val moduleStatus = loadModuleStatus()
-        var cardState = loadCardState()
-        if (cardState.cards.isEmpty() && cardState.warning.isBlank()) {
-            cardState = cardState.copy(
-                warning = when (moduleStatus.level) {
-                    ModuleStatusLevel.ACTIVE -> "已收到 Hook 初始化上报，但还没有卡片快照。先打开一次小米钱包卡片页，再回到这里刷新。"
-                    ModuleStatusLevel.WAITING -> "尚未检测到 Hook 上报。打开一次小米钱包卡片页，再回到这里刷新。"
-                    ModuleStatusLevel.INACTIVE -> "先在框架里勾选 com.miui.tsmclient 作用域并重启目标进程，Hook 才会开始上报卡片信息。"
-                }
-            )
-        }
+        val cardState = loadCardState()
+        val moduleStatus = loadModuleStatus(cardState.cards.size)
         return HomeState(moduleStatus = moduleStatus, cardState = cardState)
     }
-
     fun loadTroubleshootState(): TroubleshootState {
         val context = App.appContext
         val prefs = context?.getSharedPreferences(HookEnvironment.LOCAL_STATE_PREFS_NAME, Context.MODE_PRIVATE)
@@ -50,51 +37,48 @@ object ModuleStateRepository {
         )
     }
 
-    private fun loadModuleStatus(): ModuleStatusState {
-        val service = App.xposedService ?: return loadLegacyHookStatus()
-        val frameworkLabel = readFrameworkLabel(service)
+    private fun loadModuleStatus(cardCount: Int): ModuleStatusState {
+        val service = App.xposedService ?: return loadLegacyHookStatus(cardCount)
         val scope = runCatching { service.scope.toSet() }.getOrDefault(emptySet())
         return if (HookEnvironment.TARGET_PACKAGE in scope) {
             ModuleStatusState(
                 level = ModuleStatusLevel.ACTIVE,
                 title = "模块已激活",
-                detail = "$frameworkLabel\n作用域已覆盖 ${HookEnvironment.TARGET_PACKAGE}",
+                detail = activeStatusDetail(cardCount),
             )
         } else {
-            val scopeSummary = if (scope.isEmpty()) "当前框架还没有返回作用域列表。" else "当前作用域: ${scope.joinToString()}"
             ModuleStatusState(
                 level = ModuleStatusLevel.INACTIVE,
                 title = "模块未激活",
-                detail = "$frameworkLabel\n$scopeSummary",
+                detail = "请在 LSPosed 中启用模块，并确认已勾选小米智能卡。",
             )
         }
     }
 
-    /**
-     * LSPosed 1.x loads the legacy XposedBridge entry point but does not necessarily expose
-     * libxposed's service API. Use the hook process's persisted initialization report as the
-     * activation signal instead of treating a missing libxposed Binder connection as Hook failure.
-     */
-    private fun loadLegacyHookStatus(): ModuleStatusState {
+    /** LSPosed 1.x may not expose libxposed service; use the target process report instead. */
+    private fun loadLegacyHookStatus(cardCount: Int): ModuleStatusState {
         val context = App.appContext
         val prefs = context?.getSharedPreferences(HookEnvironment.LOCAL_STATE_PREFS_NAME, Context.MODE_PRIVATE)
         val reportedAt = prefs?.getLong(HookEnvironment.PREF_KEY_TROUBLESHOOT_UPDATED_AT, 0L) ?: 0L
         if (reportedAt <= 0L) {
             return ModuleStatusState(
                 level = ModuleStatusLevel.WAITING,
-                title = "等待 Hook 上报",
-                detail = "当前未连接 libxposed 服务，且尚未收到钱包进程的 Hook 初始化上报。打开一次小米钱包卡片页后再回来刷新。",
+                title = "等待模块启动",
+                detail = "还没有检测到模块运行。请确认已在 LSPosed 启用模块并勾选小米智能卡，然后重新打开小米智能卡。",
             )
         }
-
-        val formattedTime = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date(reportedAt))
         return ModuleStatusState(
             level = ModuleStatusLevel.ACTIVE,
-            title = "旧版 Hook 已上报",
-            detail = "最近一次钱包进程 Hook 初始化上报：$formattedTime\n当前未连接 libxposed 服务；LSPosed 1.x 下这不代表旧版 Xposed Hook 未运行。",
+            title = "模块已激活",
+            detail = activeStatusDetail(cardCount),
         )
     }
 
+    private fun activeStatusDetail(cardCount: Int): String = if (cardCount > 0) {
+        "已读取到 $cardCount 张卡片，功能正常，无需处理。"
+    } else {
+        "模块已启动，但还没有读到卡片。打开小米智能卡的卡片列表，再点“同步快照”。"
+    }
     private fun loadCardState(): CardSnapshotState {
         val context = App.appContext ?: return CardSnapshotState(warning = "模块进程尚未初始化，暂时无法读取本地快照。")
         val prefs = context.getSharedPreferences(HookEnvironment.LOCAL_STATE_PREFS_NAME, Context.MODE_PRIVATE)

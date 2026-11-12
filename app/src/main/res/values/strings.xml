@@ -9,6 +9,11 @@
     <string name="home_snapshot_label">同步快照</string>
     <string name="home_action_sync">同步快照</string>
     <string name="home_action_open_mipay">打开 MiPay</string>
+    <string name="home_action_refresh_mipay">刷新小米智能卡</string>
+    <string name="home_refresh_mipay_dialog_title">为什么要手动停止小米智能卡？</string>
+    <string name="home_refresh_mipay_instructions">应用卡面后，小米智能卡可能还在内存中保留旧卡面缓存，所以需要重新启动它才能看到更新。点“前往应用详情”，然后在系统设置里点“强行停止”；返回桌面后重新打开小米智能卡，再进入卡片列表即可。此按钮只会打开应用详情，不会自动停止应用。</string>
+    <string name="home_refresh_mipay_open_settings">前往应用详情</string>
+    <string name="home_action_mipay_settings_unavailable">无法打开小米智能卡的应用详情</string>
     <string name="home_action_troubleshoot">故障排查</string>
     <string name="snapshot_count_format">%1$d 张卡片</string>
     <string name="last_updated_format">最近同步: %1$s</string>

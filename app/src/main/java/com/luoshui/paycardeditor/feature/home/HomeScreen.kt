@@ -14,14 +14,21 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.BugReport
 import androidx.compose.material.icons.filled.Sync
+import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Wallet
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -177,6 +184,7 @@ private fun SnapshotSummaryCard(
 
 @Composable
 private fun ActionsCard(onEvent: (HomeEvent) -> Unit) {
+    var showRefreshInstructions by remember { mutableStateOf(false) }
     TonalCard(modifier = Modifier.fillMaxWidth()) {
         Column(Modifier.padding(20.dp)) {
             Button(
@@ -188,6 +196,15 @@ private fun ActionsCard(onEvent: (HomeEvent) -> Unit) {
                 Text(stringResource(R.string.home_action_open_mipay))
             }
             Spacer(Modifier.height(12.dp))
+            FilledTonalButton(
+                onClick = { showRefreshInstructions = true },
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                Icon(Icons.Default.Refresh, contentDescription = null)
+                Spacer(Modifier.width(8.dp))
+                Text(stringResource(R.string.home_action_refresh_mipay))
+            }
+            Spacer(Modifier.height(12.dp))
             OutlinedButton(
                 onClick = { onEvent(HomeEvent.OpenTroubleshoot) },
                 modifier = Modifier.fillMaxWidth(),
@@ -197,5 +214,25 @@ private fun ActionsCard(onEvent: (HomeEvent) -> Unit) {
                 Text(stringResource(R.string.home_action_troubleshoot))
             }
         }
+    }
+    if (showRefreshInstructions) {
+        AlertDialog(
+            onDismissRequest = { showRefreshInstructions = false },
+            title = { Text(stringResource(R.string.home_refresh_mipay_dialog_title)) },
+            text = { Text(stringResource(R.string.home_refresh_mipay_instructions)) },
+            confirmButton = {
+                TextButton(onClick = {
+                    showRefreshInstructions = false
+                    onEvent(HomeEvent.OpenMiPayAppSettings)
+                }) {
+                    Text(stringResource(R.string.home_refresh_mipay_open_settings))
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showRefreshInstructions = false }) {
+                    Text(stringResource(R.string.settings_action_cancel))
+                }
+            },
+        )
     }
 }

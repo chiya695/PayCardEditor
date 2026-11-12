@@ -1,6 +1,9 @@
 package com.luoshui.paycardeditor.app
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.net.Uri
+import android.provider.Settings
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -85,6 +88,21 @@ class MainActivity : ComponentActivity() {
                         startActivity(Intent(context, TroubleshootActivity::class.java))
                     },
                     openMiPay = { MiPayNavigator.open(context) },
+                    openMiPayAppSettings = {
+                        try {
+                            startActivity(
+                                Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+                                    data = Uri.parse("package:com.miui.tsmclient")
+                                },
+                            )
+                        } catch (_: ActivityNotFoundException) {
+                            Toast.makeText(
+                                this@MainActivity,
+                                R.string.home_action_mipay_settings_unavailable,
+                                Toast.LENGTH_SHORT,
+                            ).show()
+                        }
+                    },
                     showMessage = ::showMessage,
                 )
             }
@@ -108,6 +126,7 @@ private fun MainShell(
     openSettings: () -> Unit,
     openTroubleshoot: () -> Unit,
     openMiPay: () -> Unit,
+    openMiPayAppSettings: () -> Unit,
     showMessage: (CharSequence) -> Unit,
 ) {
     val navController = rememberNavController()
@@ -175,6 +194,7 @@ private fun MainShell(
                 HomeRoute(
                     openTroubleshoot = openTroubleshoot,
                     openMiPay = openMiPay,
+                    openMiPayAppSettings = openMiPayAppSettings,
                 )
             }
             composable(ROUTE_STUDIO) {
@@ -191,6 +211,7 @@ private fun MainShell(
 private fun HomeRoute(
     openTroubleshoot: () -> Unit,
     openMiPay: () -> Unit,
+    openMiPayAppSettings: () -> Unit,
 ) {
     val context = LocalContext.current
     val app = context.applicationContext as App
@@ -219,6 +240,7 @@ private fun HomeRoute(
             when (event) {
                 com.luoshui.paycardeditor.feature.home.HomeEvent.OpenTroubleshoot -> openTroubleshoot()
                 com.luoshui.paycardeditor.feature.home.HomeEvent.OpenMiPay -> openMiPay()
+                com.luoshui.paycardeditor.feature.home.HomeEvent.OpenMiPayAppSettings -> openMiPayAppSettings()
                 else -> viewModel.handleEvent(event)
             }
         },
