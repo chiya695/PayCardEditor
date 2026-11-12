@@ -17,6 +17,7 @@ data class CardStudioUiState(
     val assignmentCountByAssetId: Map<String, Int> = emptyMap(),
     val totalAssignments: Int = 0,
     val isLoading: Boolean = true,
+    val isSavingLogoCard: Boolean = false,
     val applySheet: ApplyAssetSheet? = null,
     val actionsSheet: AssetActionsSheet? = null,
     val pendingDeleteAsset: CardAsset? = null,
@@ -60,6 +61,7 @@ sealed interface CardStudioEvent {
         val displayName: String,
         val existingAssetId: String?,
     ) : CardStudioEvent
+    data class SaveLogoCard(val file: java.io.File, val displayName: String) : CardStudioEvent
     data class RemoveAsset(val asset: CardAsset) : CardStudioEvent
 
     data class RequestApplyAsset(val asset: CardAsset) : CardStudioEvent
@@ -78,5 +80,6 @@ sealed interface CardStudioEvent {
 
 /** One-shot feedback emitted only after a Studio operation reaches its final result. */
 sealed interface CardStudioEffect {
+    data object LogoCardSaved : CardStudioEffect
     data class ShowMessage(val message: UiText) : CardStudioEffect
 }

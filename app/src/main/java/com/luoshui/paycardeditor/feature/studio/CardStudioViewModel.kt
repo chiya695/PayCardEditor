@@ -13,6 +13,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.CancellationException
 
 /**
  * State holder for [CardStudioScreen].
@@ -84,6 +85,27 @@ class CardStudioViewModel(
                     ),
                 )
                 refresh()
+            }
+
+            is CardStudioEvent.SaveLogoCard -> {
+                if (_uiState.value.isSavingLogoCard) return
+                _uiState.value = _uiState.value.copy(isSavingLogoCard = true)
+                viewModelScope.launch {
+                    try {
+                        require(event.displayName.isNotBlank() && event.displayName.trim().length <= 80)
+                        val saved = assetSaver(event.file, event.displayName.trim(), null)
+                        _effects.emit(CardStudioEffect.LogoCardSaved)
+                        _effects.emit(CardStudioEffect.ShowMessage(UiText(R.string.asset_saved_message, listOf(saved.displayName))))
+                        refresh()
+                    } catch (e: CancellationException) {
+                        throw e
+                    } catch (_: Exception) {
+                        emitError(UiText(R.string.error_save_asset_failed))
+                    } finally {
+                        event.file.delete()
+                        _uiState.value = _uiState.value.copy(isSavingLogoCard = false)
+                    }
+                }
             }
 
             is CardStudioEvent.RemoveAsset -> viewModelScope.launch {

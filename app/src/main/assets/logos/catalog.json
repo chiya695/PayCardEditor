@@ -1,0 +1,911 @@
+[
+  {
+    "id": "79d556fb1e4df21a",
+    "name": "北京市政交通一卡通（白色简称标志）",
+    "category": "交通卡",
+    "group": "交通卡/城市一卡通",
+    "path": "logos/79d556fb1e4df21a.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "81a6c30589332759",
+    "name": "武汉通（横版）",
+    "category": "交通卡",
+    "group": "交通卡/城市一卡通",
+    "path": "logos/81a6c30589332759.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "967e1c3cb1732bbe",
+    "name": "深圳通",
+    "category": "交通卡",
+    "group": "交通卡/城市一卡通",
+    "path": "logos/967e1c3cb1732bbe.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "7f16e13583d3baf9",
+    "name": "北京市政交通一卡通有限公司",
+    "category": "交通卡",
+    "group": "交通卡发行机构标识",
+    "path": "logos/7f16e13583d3baf9.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "2487dede73e2108d",
+    "name": "Suica",
+    "category": "交通卡",
+    "group": "交通卡标识",
+    "path": "logos/2487dede73e2108d.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "9a73b3309bacd011",
+    "name": "上海公共交通卡",
+    "category": "交通卡",
+    "group": "交通卡标识",
+    "path": "logos/9a73b3309bacd011.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "f67ace3de4c98553",
+    "name": "八达通 Octopus",
+    "category": "交通卡",
+    "group": "交通卡标识",
+    "path": "logos/f67ace3de4c98553.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "5831118ee3042a38",
+    "name": "北京市政交通一卡通（蓝色简称版）",
+    "category": "交通卡",
+    "group": "交通卡标识",
+    "path": "logos/5831118ee3042a38.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "346f1dc81d365d66",
+    "name": "合肥畅通卡",
+    "category": "交通卡",
+    "group": "交通卡标识",
+    "path": "logos/346f1dc81d365d66.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "063e5a0b9a94e761",
+    "name": "岭南通",
+    "category": "交通卡",
+    "group": "交通卡标识",
+    "path": "logos/063e5a0b9a94e761.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "cb1fc9d30f35e7ab",
+    "name": "桂民卡 GX T-UNION",
+    "category": "交通卡",
+    "group": "交通卡标识",
+    "path": "logos/cb1fc9d30f35e7ab.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "52ebad631e7fd764",
+    "name": "武汉通（竖排版）",
+    "category": "交通卡",
+    "group": "交通卡标识",
+    "path": "logos/52ebad631e7fd764.webp",
+    "note": "原图有不透明背景，不会自动去底。",
+    "usage": "logo"
+  },
+  {
+    "id": "3a75bfba6e5e34c7",
+    "name": "潇湘卡",
+    "category": "交通卡",
+    "group": "交通卡标识",
+    "path": "logos/3a75bfba6e5e34c7.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "d7b68695c87375e1",
+    "name": "羊城通",
+    "category": "交通卡",
+    "group": "交通卡标识",
+    "path": "logos/d7b68695c87375e1.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "c7a1611185249e82",
+    "name": "金陵通",
+    "category": "交通卡",
+    "group": "交通卡标识",
+    "path": "logos/c7a1611185249e82.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "f60658e098dca88f",
+    "name": "长安通",
+    "category": "交通卡",
+    "group": "交通卡标识",
+    "path": "logos/f60658e098dca88f.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "05344886063612cf",
+    "name": "岭南通·羊城通组合标志",
+    "category": "交通卡",
+    "group": "交通卡组合标志",
+    "path": "logos/05344886063612cf.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "7634f09dfbd5c29b",
+    "name": "重庆轨道交通 CRT",
+    "category": "交通卡",
+    "group": "交通运营机构标志",
+    "path": "logos/7634f09dfbd5c29b.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "1f63f6182a14ea3b",
+    "name": "合肥城市通卡股份有限公司标志",
+    "category": "交通卡",
+    "group": "发行/运营机构标志",
+    "path": "logos/1f63f6182a14ea3b.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "4c77febe56517ff0",
+    "name": "福州市民卡",
+    "category": "交通卡",
+    "group": "市民卡标识",
+    "path": "logos/4c77febe56517ff0.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "212dfe9da52e9cd6",
+    "name": "上海都市旅游卡",
+    "category": "交通卡",
+    "group": "旅游卡标识",
+    "path": "logos/212dfe9da52e9cd6.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "5b4ee671709f280c",
+    "name": "交通联合（红色版）",
+    "category": "交通卡",
+    "group": "通用交通标识",
+    "path": "logos/5b4ee671709f280c.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "e9dda523d8a798b1",
+    "name": "交通联合（蓝色版）",
+    "category": "交通卡",
+    "group": "通用交通标识",
+    "path": "logos/e9dda523d8a798b1.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "7fb826f51ec188a6",
+    "name": "eID 公民网络电子身份标识",
+    "category": "其他标识",
+    "group": "电子身份标志",
+    "path": "logos/7fb826f51ec188a6.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "80de878572249c63",
+    "name": "STB（待确认）",
+    "category": "待确认",
+    "group": "待确认",
+    "path": "logos/80de878572249c63.webp",
+    "note": "名称尚未确认，按原图展示。",
+    "usage": "logo"
+  },
+  {
+    "id": "0e6763efffff3803",
+    "name": "未识别（红色椭圆字母图形）",
+    "category": "待确认",
+    "group": "待确认",
+    "path": "logos/0e6763efffff3803.webp",
+    "note": "名称尚未确认，按原图展示。",
+    "usage": "logo"
+  },
+  {
+    "id": "6648114278c75daa",
+    "name": "Amusement IC_01",
+    "category": "街机卡",
+    "group": "街机卡兼容标识",
+    "path": "logos/6648114278c75daa.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "07070f5db8042677",
+    "name": "Amusement IC_02",
+    "category": "街机卡",
+    "group": "街机卡兼容标识",
+    "path": "logos/07070f5db8042677.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "4d414e0d1c87f644",
+    "name": "Aime_01",
+    "category": "街机卡",
+    "group": "街机游戏卡标识",
+    "path": "logos/4d414e0d1c87f644.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "872ab87ce210d19c",
+    "name": "Aime_02",
+    "category": "街机卡",
+    "group": "街机游戏卡标识",
+    "path": "logos/872ab87ce210d19c.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "f6fc78c59f020200",
+    "name": "Aime_03",
+    "category": "街机卡",
+    "group": "街机游戏卡标识",
+    "path": "logos/f6fc78c59f020200.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "13ec901accbb5e78",
+    "name": "Mastercard（彩色）",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/13ec901accbb5e78.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "b1994c8506f63373",
+    "name": "Mastercard（灰色横版，深色文字）",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/b1994c8506f63373.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "bc94d14f600aac7a",
+    "name": "Mastercard（灰色横版，白色文字）",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/bc94d14f600aac7a.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "174e2a42af21bfeb",
+    "name": "Mastercard（灰色竖版，深色文字）",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/174e2a42af21bfeb.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "e60252d7eea7ced6",
+    "name": "Mastercard（灰色竖版，白色文字）",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/e60252d7eea7ced6.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "cbf049367f9c7a25",
+    "name": "Visa_01",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/cbf049367f9c7a25.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "50f0f29cce371a1b",
+    "name": "Visa_02",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/50f0f29cce371a1b.webp",
+    "note": "原图有不透明背景，不会自动去底。",
+    "usage": "logo"
+  },
+  {
+    "id": "43427eee88dc5a26",
+    "name": "京东金融（彩色_金色）",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/43427eee88dc5a26.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "34270a7f969550da",
+    "name": "京东金融（白色版）",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/34270a7f969550da.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "bc72c572d38e46b5",
+    "name": "京东闪付",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/bc72c572d38e46b5.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "ced06676590abb91",
+    "name": "银联 QuickPass 闪付",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/ced06676590abb91.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "b9139a0773475261",
+    "name": "银联 UnionPay",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/b9139a0773475261.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "7af5446550179096",
+    "name": "银联 UnionPay（彩色）",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/7af5446550179096.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "031ba77587b97736",
+    "name": "银联（小标位于大画布右下）",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/031ba77587b97736.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "91339dfb1fc29bf0",
+    "name": "银联（灰色）",
+    "category": "金融",
+    "group": "支付品牌与网络",
+    "path": "logos/91339dfb1fc29bf0.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "70344d84dae5eb6d",
+    "name": "American Express _ AmEx",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/70344d84dae5eb6d.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "e0deb82472d50b5b",
+    "name": "ArCa",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/e0deb82472d50b5b.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "5c4b4a8ac0e122f5",
+    "name": "BANELCO",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/5c4b4a8ac0e122f5.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "d4bdbe187a4a08df",
+    "name": "BC Card",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/d4bdbe187a4a08df.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "6d66c78d68a26393",
+    "name": "BCA card",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/6d66c78d68a26393.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "71f342c8163e1a4d",
+    "name": "Banknetvn",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/71f342c8163e1a4d.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "74b1f1b755e8e31a",
+    "name": "CB（Cartes Bancaires）",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/74b1f1b755e8e31a.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "3f7fae3a692ab86c",
+    "name": "Cirrus",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/3f7fae3a692ab86c.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "099f823e88103e31",
+    "name": "Diners Club International",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/099f823e88103e31.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "94e4742d3388697a",
+    "name": "Discover",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/94e4742d3388697a.webp",
+    "note": "原图有不透明背景，不会自动去底。",
+    "usage": "logo"
+  },
+  {
+    "id": "dec558a48d62ada7",
+    "name": "GPN（印度尼西亚国家支付网关标识）",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/dec558a48d62ada7.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "65c4725e79fc297b",
+    "name": "HUMO",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/65c4725e79fc297b.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "fcfdab765c24c3f6",
+    "name": "Interac",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/fcfdab765c24c3f6.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "35e9f15a59fe8c4b",
+    "name": "JCB",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/35e9f15a59fe8c4b.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "d79245da58e87dae",
+    "name": "JETCO 银通",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/d79245da58e87dae.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "42059186720943f6",
+    "name": "LASER",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/42059186720943f6.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "18a50325a78a936b",
+    "name": "MPU",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/18a50325a78a936b.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "2898d2a0679b423d",
+    "name": "Maestro",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/2898d2a0679b423d.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "d3b5e823adb41c8a",
+    "name": "Mondex",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/d3b5e823adb41c8a.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "87612da6d0b4d8bd",
+    "name": "MyDebit",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/87612da6d0b4d8bd.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "8fdffa23fd3e768b",
+    "name": "NETS FlashPay",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/8fdffa23fd3e768b.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "368389f0942a05fb",
+    "name": "PLUS",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/368389f0942a05fb.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "497ee77e7e6d471f",
+    "name": "PayPak",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/497ee77e7e6d471f.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "bfb106b02105e389",
+    "name": "RuPay",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/bfb106b02105e389.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "dd86ca68c8c8430f",
+    "name": "TROY",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/dd86ca68c8c8430f.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "ce3f00198d82f2cf",
+    "name": "U CARD 联合信用卡",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/ce3f00198d82f2cf.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "210d03456a57bc46",
+    "name": "UNION CARD",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/210d03456a57bc46.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "b84d411c6e36add4",
+    "name": "UZCARD",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/b84d411c6e36add4.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "da783676a4c8a6bd",
+    "name": "Verve",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/da783676a4c8a6bd.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "66ba8631a437092d",
+    "name": "eftpos",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/66ba8631a437092d.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "11a33adfff781473",
+    "name": "girocard",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/11a33adfff781473.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "4bbe6fa58fb2cf9c",
+    "name": "БЕЛКАРТ _ BELKART",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/4bbe6fa58fb2cf9c.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "2bda5db8e124e65d",
+    "name": "Золотая Корона _ Golden Crown",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/2bda5db8e124e65d.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "88ab7b6684379dcc",
+    "name": "МИР _ MIR",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/88ab7b6684379dcc.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "8668233b59fd43e2",
+    "name": "НПС ПРИДНЕСТРОВЬЕ",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/8668233b59fd43e2.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "4748af18ec8179a4",
+    "name": "ПРО100 _ PRO100",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/4748af18ec8179a4.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "647cde39e26ff9ca",
+    "name": "ПРОСТІР _ PROSTIR",
+    "category": "金融",
+    "group": "海外金融",
+    "path": "logos/647cde39e26ff9ca.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "a8a688a4eb94f67a",
+    "name": "上海银行",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/a8a688a4eb94f67a.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "b4a0339698d11ad2",
+    "name": "中国民生银行_01",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/b4a0339698d11ad2.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "eea430396039acc3",
+    "name": "中国民生银行_02",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/eea430396039acc3.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "cffc4cb6fa88e578",
+    "name": "中国银行",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/cffc4cb6fa88e578.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "da906c9f8e042a30",
+    "name": "中国银行（白色）",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/da906c9f8e042a30.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "7178ad8a56f8de2d",
+    "name": "交行",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/7178ad8a56f8de2d.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "847863e64cde9e36",
+    "name": "农行",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/847863e64cde9e36.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "fc1ebae4094f3122",
+    "name": "工商银行",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/fc1ebae4094f3122.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "2fec1dab8bd55a6c",
+    "name": "平安银行",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/2fec1dab8bd55a6c.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "14cf2b51cf9fbdca",
+    "name": "平安银行（灰色）",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/14cf2b51cf9fbdca.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "5e4a82cfa0490c52",
+    "name": "平安银行（金色）",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/5e4a82cfa0490c52.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "939c4462a76dfebe",
+    "name": "建设银行",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/939c4462a76dfebe.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "a1c15ff53b84c7c8",
+    "name": "招商银行",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/a1c15ff53b84c7c8.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "c0c0b7560d764bc1",
+    "name": "民生银行",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/c0c0b7560d764bc1.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "a0214f1fb1cb9500",
+    "name": "浙江农信",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/a0214f1fb1cb9500.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "90ba7436d85e9ff9",
+    "name": "浦发银行",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/90ba7436d85e9ff9.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "d02dccba000317f0",
+    "name": "邮储银行",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/d02dccba000317f0.webp",
+    "note": "",
+    "usage": "logo"
+  },
+  {
+    "id": "4251b03b40b7d477",
+    "name": "邮储银行（白色）",
+    "category": "金融",
+    "group": "银行",
+    "path": "logos/4251b03b40b7d477.webp",
+    "note": "",
+    "usage": "logo"
+  }
+]

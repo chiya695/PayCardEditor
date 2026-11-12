@@ -26,6 +26,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalResources
@@ -69,10 +73,13 @@ fun CardStudioScreen(
     val resources = LocalResources.current
     val cropActions = rememberCardStudioCropActions(onEvent, showMessage)
 
+    var logoAssetId by rememberSaveable { mutableStateOf<String?>(null) }
+
     UiErrorEffect(errorEvents)
     LaunchedEffect(effects) {
         effects.collect { effect ->
             when (effect) {
+                CardStudioEffect.LogoCardSaved -> logoAssetId = null
                 is CardStudioEffect.ShowMessage -> {
                     val message = resources.getString(
                         effect.message.resId,
@@ -124,11 +131,21 @@ fun CardStudioScreen(
                 onEvent(CardStudioEvent.DismissActionsSheet)
                 cropActions.replace(actionsSheet.asset)
             },
+            onInsertLogo = {
+                logoAssetId = actionsSheet.asset.id
+                onEvent(CardStudioEvent.DismissActionsSheet)
+            },
             onDelete = {
                 onEvent(CardStudioEvent.ConfirmDeleteAsset(actionsSheet.asset))
             },
             onDismiss = { onEvent(CardStudioEvent.DismissActionsSheet) },
         )
+    }
+
+    uiState.assets.firstOrNull { it.id == logoAssetId }?.let { asset ->
+        LogoEditorDialog(asset = asset, saving = uiState.isSavingLogoCard,
+            onSave = { file, name -> onEvent(CardStudioEvent.SaveLogoCard(file, name)) },
+            onDismiss = { logoAssetId = null })
     }
 
     val pendingDelete = uiState.pendingDeleteAsset
@@ -349,6 +366,7 @@ private fun AssetActionsDialog(
     asset: CardAsset,
     onEdit: () -> Unit,
     onReplace: () -> Unit,
+    onInsertLogo: () -> Unit,
     onDelete: () -> Unit,
     onDismiss: () -> Unit,
 ) {
@@ -362,6 +380,9 @@ private fun AssetActionsDialog(
                 }
                 TextButton(onClick = onReplace, modifier = Modifier.fillMaxWidth()) {
                     Text(stringResource(R.string.asset_action_replace))
+                }
+                TextButton(onClick = onInsertLogo, modifier = Modifier.fillMaxWidth()) {
+                    Text(stringResource(R.string.asset_action_insert_logo))
                 }
                 TextButton(onClick = onDelete, modifier = Modifier.fillMaxWidth()) {
                     Text(

@@ -503,4 +503,61 @@ class CardStudioViewModelTest {
         advanceUntilIdle()
         assertEquals("Refresh 后批量调用累计 = 2 次", 2, fakes.assignmentCountsCalls)
     }
+
+    @Test
+    fun logoSaveCreatesNamedCopyWithoutChangingRules() = runTest {
+        val fakes = Fakes(assets = listOf(makeAsset()))
+        val vm = viewModel(fakes)
+        advanceUntilIdle()
+        val temporary = File.createTempFile("logo_", ".png")
+        vm.handleEvent(CardStudioEvent.SaveLogoCard(temporary, "  羊城通卡面  "))
+        assertTrue(vm.uiState.value.isSavingLogoCard)
+        advanceUntilIdle()
+        assertEquals("羊城通卡面", fakes.lastSavedDisplayName)
+        assertNull(fakes.lastSavedExistingId)
+        assertEquals(0, fakes.ruleWriterCalls)
+        assertEquals(0, fakes.deleterCalls)
+        assertFalse(temporary.exists())
+        assertFalse(vm.uiState.value.isSavingLogoCard)
+    }
+
+    @Test
+    fun failedLogoSaveKeepsOriginalAndReleasesBusyState() = runTest {
+        val fakes = Fakes(assets = listOf(makeAsset()), saverShouldThrow = true)
+        val vm = viewModel(fakes)
+        advanceUntilIdle()
+        val temporary = File.createTempFile("logo_", ".png")
+        vm.handleEvent(CardStudioEvent.SaveLogoCard(temporary, "新卡面"))
+        advanceUntilIdle()
+        assertEquals("a1", vm.uiState.value.assets.single().id)
+        assertEquals(0, fakes.ruleWriterCalls)
+        assertFalse(temporary.exists())
+        assertFalse(vm.uiState.value.isSavingLogoCard)
+    }
+
+    @Test
+    fun blankLogoNameIsRejectedBeforeSaving() = runTest {
+        val fakes = Fakes()
+        val vm = viewModel(fakes)
+        advanceUntilIdle()
+        val temporary = File.createTempFile("logo_", ".png")
+        vm.handleEvent(CardStudioEvent.SaveLogoCard(temporary, "   "))
+        advanceUntilIdle()
+        assertEquals(0, fakes.saverCalls)
+        assertFalse(temporary.exists())
+        assertFalse(vm.uiState.value.isSavingLogoCard)
+    }
+
+    @Test
+    fun rapidSaveTapsDoNotDuplicateCard() = runTest {
+        val fakes = Fakes()
+        val vm = viewModel(fakes)
+        advanceUntilIdle()
+        val temporary = File.createTempFile("logo_", ".png")
+        val event = CardStudioEvent.SaveLogoCard(temporary, "新卡面")
+        vm.handleEvent(event)
+        vm.handleEvent(event)
+        advanceUntilIdle()
+        assertEquals(1, fakes.saverCalls)
+    }
 }

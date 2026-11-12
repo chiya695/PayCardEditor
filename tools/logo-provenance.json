@@ -1,0 +1,810 @@
+[
+  {
+    "id": "5b4ee671709f280c",
+    "source": "交通卡\\交通联合（红色版）.png",
+    "sha256": "b508686b966aed204af5dc0a50c35ed9f969c3ef847579da9e7e811c67615ab8",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "480276aa9f41c9c91d31512825a204db00b2e7c34e22eaf2440c9e8893d0ef3c"
+  },
+  {
+    "id": "e9dda523d8a798b1",
+    "source": "交通卡\\交通联合（蓝色版）.png",
+    "sha256": "5993687b21aaecf6cd0388528b80a8ff4d5059080e0c426f88bfba057d2a3ce8",
+    "width": 404,
+    "height": 253,
+    "outputSha256": "79c2d7e8a66939bc63e1f842586310f0665268bd06e3b4d0648c75188a2529b9"
+  },
+  {
+    "id": "7fb826f51ec188a6",
+    "source": "交通卡\\eID 公民网络电子身份标识.png",
+    "sha256": "f8a109359edbe4572384cbbcc30b0c7eb790ed3d2bf7cb48592bbe3c9c5b9c05",
+    "width": 224,
+    "height": 182,
+    "outputSha256": "513c8ef2a86f25abd5acdd345319abc481960ebd1f3fbcb52b21a32b827a1018"
+  },
+  {
+    "id": "79d556fb1e4df21a",
+    "source": "交通卡\\北京市政交通一卡通（白色简称标志）.png",
+    "sha256": "de835b10dd5d48a2a6a87c61afcfd5c2bbedc7a68cfea61a01cc1dec7f9cb728",
+    "width": 186,
+    "height": 44,
+    "outputSha256": "96d22beaa2edff898fba0e25c4d5598bccb3246eed1120126d56424756e00908"
+  },
+  {
+    "id": "1f63f6182a14ea3b",
+    "source": "交通卡\\合肥城市通卡股份有限公司标志.png",
+    "sha256": "2b03ca2aff0eedf51744709266bbcd6630c9e5fd2cfe98fcdb57d234ea50bf39",
+    "width": 188,
+    "height": 112,
+    "outputSha256": "eda3ca898c75b63798d393cdaded863e44e412e996e0bcbf613c21d3a59221ca"
+  },
+  {
+    "id": "81a6c30589332759",
+    "source": "交通卡\\武汉通（横版）.png",
+    "sha256": "a1daae0295932fb721f7b2b3bd25a23f9fd2e6071ca88969ddeae0fb3dab65ad",
+    "width": 217,
+    "height": 59,
+    "outputSha256": "2f9d707091b3577b826f422427e389397a9234e4aabfff17e43972509c5c537a"
+  },
+  {
+    "id": "05344886063612cf",
+    "source": "交通卡\\岭南通·羊城通组合标志.png",
+    "sha256": "966298e8ce357bb435084a1d67897e87d68acd291db5f2fa0431d776be5196bb",
+    "width": 2066,
+    "height": 589,
+    "outputSha256": "ef1bbbf0663df35e673418a4a12248251233bb6138dfaa35e59269521bc72d0c"
+  },
+  {
+    "id": "967e1c3cb1732bbe",
+    "source": "交通卡\\深圳通.png",
+    "sha256": "5c3f11f96a94a7736a02315ba5e897b7a7558ef201f68630d4fb6156e6618dba",
+    "width": 196,
+    "height": 97,
+    "outputSha256": "dbc1a0e20eb6f04e8b51fbf44880ed0cf9a8cea349b15fd935cb140fce89eae2"
+  },
+  {
+    "id": "2487dede73e2108d",
+    "source": "交通卡\\Suica.png",
+    "sha256": "d64a236c4cf05ba26904e5a2c76fdf6348c08266f2aee3824ba7cd64bd8eb00e",
+    "width": 197,
+    "height": 106,
+    "outputSha256": "b58f9b4efc0dfa08d8c4875ee8d68854359e820e188652e91efae6b6e12c1bae"
+  },
+  {
+    "id": "5831118ee3042a38",
+    "source": "交通卡\\北京市政交通一卡通（蓝色简称版）.png",
+    "sha256": "9021ad3670e3b002666e5bd5f7a1a838e6aa98329d87563cb8641153b9e68c38",
+    "width": 3508,
+    "height": 2480,
+    "outputSha256": "760a451e3901c4902d3cc497c9626ec4eb7a2964495cebe9abf34248718530aa"
+  },
+  {
+    "id": "9a73b3309bacd011",
+    "source": "交通卡\\上海公共交通卡.png",
+    "sha256": "6cd1b181c1ca4b0d7965426bd5f038525f56f840db57e2f37dfba07119ede317",
+    "width": 151,
+    "height": 71,
+    "outputSha256": "4a8fd8a8d97615ed0ad65e8eb0fda56744875c86b704fa0d19b4c1f4796bf24f"
+  },
+  {
+    "id": "212dfe9da52e9cd6",
+    "source": "交通卡\\上海都市旅游卡.png",
+    "sha256": "583e493485863a206a7deac3ca30fbb4ae9c5bb66c20698c8a34518edd9caed7",
+    "width": 306,
+    "height": 69,
+    "outputSha256": "ccfb76dd028a9344ed48c9df702f03fa8b6d99084a956be4ac5af999e9c7df07"
+  },
+  {
+    "id": "f67ace3de4c98553",
+    "source": "交通卡\\八达通 Octopus.png",
+    "sha256": "22550e7cfa9a4b44c8a0315cf6749593b1f7b1d04486115df596dbf0683b2673",
+    "width": 303,
+    "height": 121,
+    "outputSha256": "6020e66bcead996290733148e09c84987147d90e5af0eae577dae451c4e7f8a3"
+  },
+  {
+    "id": "7f16e13583d3baf9",
+    "source": "交通卡\\北京市政交通一卡通有限公司.png",
+    "sha256": "ece53d055de7f25ad4d46419ba1e688b022a0bf0257b0d109726c780d861e31d",
+    "width": 612,
+    "height": 59,
+    "outputSha256": "92356335c9d30c0424143547e5d23ae7aa6908616f9e0b83194da914955a4ea6"
+  },
+  {
+    "id": "063e5a0b9a94e761",
+    "source": "交通卡\\岭南通.png",
+    "sha256": "5fc3f25fc44f0c5861db10addf4405b183f316d92d2706b88a8484d3133b6b43",
+    "width": 213,
+    "height": 101,
+    "outputSha256": "e151415586b3b643019c90309db78f430103a935d7771753002f78a15f792553"
+  },
+  {
+    "id": "cb1fc9d30f35e7ab",
+    "source": "交通卡\\桂民卡 GX T-UNION.png",
+    "sha256": "770483772eb646ece14bd8c3c14f7e3f99f9020d89624c7a4f375f5ba12ac60f",
+    "width": 512,
+    "height": 179,
+    "outputSha256": "601da69ab46bac48e041f8cb1a15810da91256cc6b7665ab257f589fe4bfd143"
+  },
+  {
+    "id": "52ebad631e7fd764",
+    "source": "交通卡\\武汉通（竖排版）.jpg",
+    "sha256": "d06943dfd5cc5e83b6e8036db4e34fb03180c63e370ca488a805bb9e3dfe30af",
+    "width": 712,
+    "height": 529,
+    "outputSha256": "5237f464dceadeb93eb43d14e4294f8c653b9d162f46832d43ff1ea7c470ba61"
+  },
+  {
+    "id": "3a75bfba6e5e34c7",
+    "source": "交通卡\\潇湘卡.png",
+    "sha256": "0ad11920134446d2017e5c70333210fb25591148bf20c71d7f2bd61954b4eadc",
+    "width": 263,
+    "height": 68,
+    "outputSha256": "75d1c56543c71283ae9109ab0b771a6951ecb46c5f5333812ffb6cd4bb8cb0db"
+  },
+  {
+    "id": "346f1dc81d365d66",
+    "source": "交通卡\\合肥畅通卡.png",
+    "sha256": "2fec0db10a2ef587e2e51f1b1844c06565a70f2eede37efcca6497b366b0809c",
+    "width": 203,
+    "height": 108,
+    "outputSha256": "8c7b5a2a349d8e5e395b24125e5365fb42a2e4fa9799aea7305bcbc18cc17257"
+  },
+  {
+    "id": "4c77febe56517ff0",
+    "source": "交通卡\\福州市民卡.png",
+    "sha256": "d1f6b20b889c04d72256bec0071b21f0b36894681d5888350a1efdf8c594c739",
+    "width": 285,
+    "height": 60,
+    "outputSha256": "285386a9b55fcd84391b66b6464f92abba21b868c6025d15b7e59028c4c76bf7"
+  },
+  {
+    "id": "d7b68695c87375e1",
+    "source": "交通卡\\羊城通.png",
+    "sha256": "bc6c639d88f1b1b968fe5d2728f6c483acedd3b975d884dbfa598c1315d947d9",
+    "width": 128,
+    "height": 51,
+    "outputSha256": "be8a7e7a351cb758e10a822ec87e238a757115986135f4be59f5c8f3ea996ebe"
+  },
+  {
+    "id": "7634f09dfbd5c29b",
+    "source": "交通卡\\重庆轨道交通 CRT.png",
+    "sha256": "fdb40811be5e23b012bc6dc01304383e3fb17f26b470183e52504e1c010c2fe6",
+    "width": 293,
+    "height": 146,
+    "outputSha256": "4585468aed30340863e46c55c68053075d2e78f5391ab63918bf0bac4fdee043"
+  },
+  {
+    "id": "c7a1611185249e82",
+    "source": "交通卡\\金陵通.png",
+    "sha256": "c5817d9611f88f6806d279730200cfcc0e0d35fa7fb2cc2774fecb9eeaab6d1b",
+    "width": 425,
+    "height": 79,
+    "outputSha256": "f795bddde598a5362ea9f340695aa00270d155b7101e1171204c73fab4827315"
+  },
+  {
+    "id": "f60658e098dca88f",
+    "source": "交通卡\\长安通.png",
+    "sha256": "370d84392fe1ff43079ece926dfc9bfbfc057f87c169d203450a73f39e0a371a",
+    "width": 195,
+    "height": 72,
+    "outputSha256": "6eef2796fbbf0a9209ce6cf16353d7bc4430f5adca505ffe51a4128033a9a8d8"
+  },
+  {
+    "id": "8668233b59fd43e2",
+    "source": "不常见的国外金融\\НПС ПРИДНЕСТРОВЬЕ.png",
+    "sha256": "2d8f59ea007b1c61749943a5d8ceb62acea2ef002d32d3a9dde638607b343a8b",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "e3888368e21958b83c93a2890289eed199c10ed1a1c0a770e27424a40d9994f2"
+  },
+  {
+    "id": "210d03456a57bc46",
+    "source": "不常见的国外金融\\UNION CARD.png",
+    "sha256": "a0a3c3fa367aba887782df3e0d4e6c4b68215895a3252abd3cc09bb1e0d1a752",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "8a85a8db41b4c1bfe42574e69b947a1a32e78a4937579b9820a610a364b14000"
+  },
+  {
+    "id": "66ba8631a437092d",
+    "source": "不常见的国外金融\\eftpos.png",
+    "sha256": "5c215631ff3f6dcfeb427783741040ba631bd9676a810e6a52979ed949b8b69e",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "3dba05537dc245af3936e88796f83a707c4f1b0f3674b098390a705d90454aca"
+  },
+  {
+    "id": "80de878572249c63",
+    "source": "不常见的国外金融\\STB（待确认）.png",
+    "sha256": "391f363c4ee40a255c6c4a0a063618c1413eca347d20e6de4ba73bcd080a754b",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "abb64ef9e511a6ebcdf32ddba4a3f462994d7b9f56f9796f04c8caf952226991"
+  },
+  {
+    "id": "da783676a4c8a6bd",
+    "source": "不常见的国外金融\\Verve.png",
+    "sha256": "0b191b8802c24dd2036b328556704c2bfd78b6f176f207082061514af939be5a",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "af954128e2700dc2d3ff2a93727300f8a8039fd86374d9ef1287da558c20ae6d"
+  },
+  {
+    "id": "4748af18ec8179a4",
+    "source": "不常见的国外金融\\ПРО100 _ PRO100.png",
+    "sha256": "bbaad8a8330218d0b45ca8ceb2d7d0da2508e58e6dd080912647d2284a3d9cb7",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "6bb88189200c7afb6bd23bba36b343e65abad9a5e8cf172cf2a33ed786526673"
+  },
+  {
+    "id": "42059186720943f6",
+    "source": "不常见的国外金融\\LASER.png",
+    "sha256": "0ece8c8ee8c385c657689746c47d24551dea5555cff41bed88c458f0ae184253",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "9c107e0660dc2988411c7f2feb5bce2724baa501dc3d6af848fbb8f83c3fa3f1"
+  },
+  {
+    "id": "dec558a48d62ada7",
+    "source": "不常见的国外金融\\GPN（印度尼西亚国家支付网关标识）.png",
+    "sha256": "2b6f0fcc206617880d62fc6c710ab611d5344693a93b9984c8486fdccad9a538",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "bb9aee35c9c16dc4b46b39a8dbc004ee756ce9e047cdd748ad36517211d072e9"
+  },
+  {
+    "id": "8fdffa23fd3e768b",
+    "source": "不常见的国外金融\\NETS FlashPay.png",
+    "sha256": "86a1859dedfc4bb6c18a27d801caa7cf46b747d4ecdc9c91eba9e8c5b14459e8",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "9ff00fd45e2b2ab58a6e32afbd70b6dcd1c0b0c6ba00695ed47aa755550652ab"
+  },
+  {
+    "id": "ce3f00198d82f2cf",
+    "source": "不常见的国外金融\\U CARD 联合信用卡.png",
+    "sha256": "d8507ded992019800d02f3ef5c1439606aa8cb4c35d23fff024f924639ad24c9",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "c62548218489008e34b7ea1d1a4787ebd6612c7854c06e98d3ba553adb68c507"
+  },
+  {
+    "id": "647cde39e26ff9ca",
+    "source": "不常见的国外金融\\ПРОСТІР _ PROSTIR.png",
+    "sha256": "7d4d00d937a048a8414407b907d9af0eb6ea8c5535ea24437bb37ba09dd7011d",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "701fafccaf4671c981893b3dea254c00921cbc9a8e0cd105a685044d9dc8cfda"
+  },
+  {
+    "id": "dd86ca68c8c8430f",
+    "source": "不常见的国外金融\\TROY.png",
+    "sha256": "d7110ab190bf3080fe9dbe8d1215dcbc4ebe3400ef7004d7f28f547382a4cb8b",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "8cc1c87cb27f4d01ec29361610975be32b59db89643dfdf739fe4512424889dd"
+  },
+  {
+    "id": "fcfdab765c24c3f6",
+    "source": "不常见的国外金融\\Interac.png",
+    "sha256": "a507331cdabefc925efb934a13fcf7f20bb9a5c683685f71d07c63b734a36d6c",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "309f298d0cdb77cd5eefdbb4aa50c93a9c34134d7b1136c20a45ace9ac3eb189"
+  },
+  {
+    "id": "65c4725e79fc297b",
+    "source": "不常见的国外金融\\HUMO.png",
+    "sha256": "6ff043d467e7924b98d1cdaf2e724ba9526675d2f4fda1b896b1967518e3ae58",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "d30c431d16466cfd3b247274e6213d41f8847e044e52e851f23315abb2a37f4d"
+  },
+  {
+    "id": "d4bdbe187a4a08df",
+    "source": "不常见的国外金融\\BC Card.png",
+    "sha256": "e4c9d21a15c077314f426b87fe7b77a82f6794131d111f8515f77cddd7d20e72",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "2ded610dc8f030b27054a97487b9d495dee82847e05e6750ce46937abdab9496"
+  },
+  {
+    "id": "88ab7b6684379dcc",
+    "source": "不常见的国外金融\\МИР _ MIR.png",
+    "sha256": "9f6753006f44cdee19edcd7d1db28817d8ae506947c4a46509be82174346f5d8",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "a8ca9b51aab2fe85298168606fd8648d4a9f40bdca8ed23315622425a7eb0a55"
+  },
+  {
+    "id": "497ee77e7e6d471f",
+    "source": "不常见的国外金融\\PayPak.png",
+    "sha256": "f5fce9f5e6aadd1f12a2d625ae88802e64a7181af2fc22c6c6f2dcab5afb4535",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "89c876fec449b4cc5b9f9c5461896bf8715daab7a325e6ba165073ba5d871b4c"
+  },
+  {
+    "id": "bfb106b02105e389",
+    "source": "不常见的国外金融\\RuPay.png",
+    "sha256": "899b8a8779d138ad9c181e9ed1a2f55d13b6b78828065f579475f76e9a8c8999",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "dea7144824e533647982af97697cd7372b26686743e6d1d3d604e1e6d1eaffab"
+  },
+  {
+    "id": "368389f0942a05fb",
+    "source": "不常见的国外金融\\PLUS.png",
+    "sha256": "0c2f6608ab1026ff53303f5a9f0567c3ff1d84fd73f25c9cc2d256ac8a1b42b3",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "24f77de9f682dbbfca7aab0fd0115a44c22997cff35131909ef0160e799be5b8"
+  },
+  {
+    "id": "2bda5db8e124e65d",
+    "source": "不常见的国外金融\\Золотая Корона _ Golden Crown.png",
+    "sha256": "78a40cdb09767c8573d270cbb47308dae4f406623cb196f7e437bc2088c76900",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "da82b954b185e42de60a938e0d431be367a5b44f2fce63b7b1ba155a43d498b3"
+  },
+  {
+    "id": "099f823e88103e31",
+    "source": "不常见的国外金融\\Diners Club International.png",
+    "sha256": "0adb933ce6795743e11816b75d268798f9f3782c894b64478fbdb94b2379a16b",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "8f135bacd092771e71e4318d65e28e96c4963f6d81826a0a95b268047a9ecec1"
+  },
+  {
+    "id": "6d66c78d68a26393",
+    "source": "不常见的国外金融\\BCA card.png",
+    "sha256": "998d65523020630968286793c8f853ac65add9fe62ae4d042f90526f4fb60f28",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "3ca5530931ca4b6f3db1738f4e6ea4b048be9f3e55fb6874e599f3773cef5832"
+  },
+  {
+    "id": "3f7fae3a692ab86c",
+    "source": "不常见的国外金融\\Cirrus.png",
+    "sha256": "8083d5dc43ebbe88671e75372fed43cb3a3da9446ace3f914ece530c660fec04",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "19e7d5abde902966a03dfac9de49f721d21a3227bd363c087afd31112cde9d12"
+  },
+  {
+    "id": "35e9f15a59fe8c4b",
+    "source": "不常见的国外金融\\JCB.png",
+    "sha256": "139d8ca068271eab17dcd16302c01f048b5b6c882d3e0ef20ebcc445a1e2f399",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "09d23675e8cd3826706c5219513285cf4634e5d66bd5a1d2380abcf7110a46e4"
+  },
+  {
+    "id": "18a50325a78a936b",
+    "source": "不常见的国外金融\\MPU.png",
+    "sha256": "edb8e1951b150345f322c84345ff4b50f3e540847cb2818db601aa6b7bc13165",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "32f7ed1bd461178619a7aa75f6967dfa4042dd7f395e05b7fc1c738799358fb7"
+  },
+  {
+    "id": "71f342c8163e1a4d",
+    "source": "不常见的国外金融\\Banknetvn.png",
+    "sha256": "27a19305c01cb6030d41cac13756405a3a7b7c657a240ddf7781044e6152b9a1",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "069293c9b37768287dd7c4130f54fa2ef68dedf949513a3958a6f0e127e5708d"
+  },
+  {
+    "id": "2898d2a0679b423d",
+    "source": "不常见的国外金融\\Maestro.png",
+    "sha256": "26bb11233e66bcf9721bf12a25be63d04e4fb4b659a32bf30ef1bc5c471cd50a",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "392249097289464b78f7e2df4b42da83812603c6242a9e6e64f688f8201739d2"
+  },
+  {
+    "id": "87612da6d0b4d8bd",
+    "source": "不常见的国外金融\\MyDebit.png",
+    "sha256": "59abd1636f3c146a331c8bd9cb8f815a877e24b472cccfc65325121d0377e50a",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "e347defcef7cdfd81c36f77b86b7ce5b9c89ee0dec7b59d93c23af2d520f8613"
+  },
+  {
+    "id": "0e6763efffff3803",
+    "source": "不常见的国外金融\\未识别（红色椭圆字母图形）.png",
+    "sha256": "3d50691bfbaed42f9e008b669eda1614674c1ef6a63ca5b76bc6fbabd6a50eb4",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "877236fe2a767048e690480f6f9ec38a5e7995df98814ee130d50729c3b00e98"
+  },
+  {
+    "id": "d3b5e823adb41c8a",
+    "source": "不常见的国外金融\\Mondex.png",
+    "sha256": "f005f43ee0db29215f3363ba48a90b3dcbdd2ff95db3d5b82aaed196f685a04e",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "8baff419126fb7d716a06f5d6aa47385605ddcd20dc4b49bc006b784524e7b03"
+  },
+  {
+    "id": "94e4742d3388697a",
+    "source": "不常见的国外金融\\Discover.png",
+    "sha256": "dca1699a1a0e118c1a592a950f6d0d37f370f7182caea7c1695ac9b646b602a4",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "f37a9a8aa3907014480655e5cf8d8f86bc3ff932a2904a470d15e3bd37676a0d"
+  },
+  {
+    "id": "4bbe6fa58fb2cf9c",
+    "source": "不常见的国外金融\\БЕЛКАРТ _ BELKART.png",
+    "sha256": "e484e49a3374cf67fb4bd3d84f593e0abcd4d3ef6ff4422bb8cc0e0bad4e3a6f",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "6b273114f5e0fbdb8932df4289b04f1ed5de0d89d7b60ea881e9f119e2f19ec6"
+  },
+  {
+    "id": "e0deb82472d50b5b",
+    "source": "不常见的国外金融\\ArCa.png",
+    "sha256": "7ded4578b451cc73706cd9a5a683dcbfd124091b36eca351956532d4276be82a",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "8b4d4bec02e13cbab7cfb8b3bfa1e025e21a818434443e8df1e011388a0aa8c3"
+  },
+  {
+    "id": "5c4b4a8ac0e122f5",
+    "source": "不常见的国外金融\\BANELCO.png",
+    "sha256": "a82c71a2705f8e1fc8278c161993957b253ed06d3815f7d94ea6e336ac677cc0",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "163188f667acf296d0d1043a3e1a173fd71a40814859e11573169444a2be528e"
+  },
+  {
+    "id": "b84d411c6e36add4",
+    "source": "不常见的国外金融\\UZCARD.png",
+    "sha256": "76d7a861e49b32551be00e195b3733b6d8dc88b6f05856f69bf47a5cdd17ebfe",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "56debbb15e1aade38491a234c34d669ff75327b9e6af6132bfbdfbae6aab806b"
+  },
+  {
+    "id": "11a33adfff781473",
+    "source": "不常见的国外金融\\girocard.png",
+    "sha256": "b649476f1b18c1a68ccbe4d07bf099f7ea3ce40973ddceeeb5b180b60dcbc40e",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "a4079aff753d6ff3cdacce13eaddcdd2051899f2daa7aa434d9ad7d5138c4cd8"
+  },
+  {
+    "id": "74b1f1b755e8e31a",
+    "source": "不常见的国外金融\\CB（Cartes Bancaires）.png",
+    "sha256": "c6b9cd667e98206fdcf117d6b67d12b9fd573745d6b9dafbbcfcf5e65389f053",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "a0e318c95f0fc0bec5adc1046c58d340f0d1b9dd616e0d30512898caa8f9c7ad"
+  },
+  {
+    "id": "70344d84dae5eb6d",
+    "source": "不常见的国外金融\\American Express _ AmEx.png",
+    "sha256": "9c1400d5a0bb46cddf93eb48d4ba53a58aa37a5e4768938d8d987ca6f63cf79d",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "22ccff98fec37e406b387c77459ce5c82c0d504ce17bc6101401f7f1d7aeeac1"
+  },
+  {
+    "id": "d79245da58e87dae",
+    "source": "不常见的国外金融\\JETCO 银通.png",
+    "sha256": "2a3656e1c91f12501bff2d3106ba7b90aa50ce70927f5d405bdbd90ee61c8f67",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "c368bbcdf7827e0385b92e82e3683a3d6162546d746ae5e3bb8162d53b83a7e5"
+  },
+  {
+    "id": "4d414e0d1c87f644",
+    "source": "不常见的国外金融\\Aime_01.svg",
+    "sha256": "884e85478141cebe1bb51b28e2e65c0fc7651f11fc8da1bdd5940e5f3055f981",
+    "width": 2048,
+    "height": 438,
+    "outputSha256": "2f723ed83668268a3e1f221dd734e68925a0f8d659c76b1e75a1f8cd5bda3287"
+  },
+  {
+    "id": "872ab87ce210d19c",
+    "source": "不常见的国外金融\\Aime_02.png",
+    "sha256": "168442a50845c9879df72aaded517b1d10f062f5c693ba09810fe53a7aa71e39",
+    "width": 2000,
+    "height": 424,
+    "outputSha256": "c2f65528dcacbfc1b2cbb687dd5e667d7353c5ef86f509dd767d6c0757b9f631"
+  },
+  {
+    "id": "f6fc78c59f020200",
+    "source": "不常见的国外金融\\Aime_03.svg",
+    "sha256": "d05f0698128df1c50a5766004b895cfdb60043792ab50e54e88b5a98fb322a11",
+    "width": 2048,
+    "height": 435,
+    "outputSha256": "a761b92dc1f9c92bd73618e8732d90b428a3d7eaecf9ff7f96b2047344dcf05c"
+  },
+  {
+    "id": "6648114278c75daa",
+    "source": "不常见的国外金融\\Amusement IC_01.png",
+    "sha256": "ffb06857330ffd26aa91542a3041f3ea2e847fc25ec06f366e06101d46064864",
+    "width": 1755,
+    "height": 2000,
+    "outputSha256": "f60969e92befe317804a46fc393095b098031e2fd2e80e5be63a45b7c5057cce"
+  },
+  {
+    "id": "07070f5db8042677",
+    "source": "不常见的国外金融\\Amusement IC_02.svg",
+    "sha256": "3f83c6b5d86bf729da449985193afc70c7c2ff50a132260f5f96c23ea75de748",
+    "width": 2048,
+    "height": 2333,
+    "outputSha256": "e274c6f84bdb8798eff52bb49e50a64b20a510abe31ba1cda48d4c926c439ccd"
+  },
+  {
+    "id": "7af5446550179096",
+    "source": "已知金融\\银联 UnionPay（彩色）.png",
+    "sha256": "ffbbc7d9d5d9a3f0432dcfe31e661be1b62d0439b8e48c6affc17ffa5d79d25d",
+    "width": 1280,
+    "height": 800,
+    "outputSha256": "c7f171680103e624cc9ba13c1338e5ab2e81dcc00a5c637c42e8280a3163d62e"
+  },
+  {
+    "id": "cbf049367f9c7a25",
+    "source": "已知金融\\Visa_01.png",
+    "sha256": "be73007526ed74237d23274daed1152633587b461c304168a719223011896f00",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "0fc25a1a32ede6747214cc59900e165fc515aecb890a20158485828cf4fecb63"
+  },
+  {
+    "id": "b9139a0773475261",
+    "source": "已知金融\\银联 UnionPay.png",
+    "sha256": "559523a6cab537895e9d3a8fca3c44bfcd48bc3198d52ca708c3f6892fbc92e1",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "08cff61680b9fa9007a37665927fb511fa1f5fb9c7a9b8763ea855ae51edc4b8"
+  },
+  {
+    "id": "13ec901accbb5e78",
+    "source": "已知金融\\Mastercard（彩色）.png",
+    "sha256": "ac19f80772767f7343c0a5b489ee78d18edacedc6cbf8dc207b206e3514b1b5d",
+    "width": 512,
+    "height": 320,
+    "outputSha256": "9bfe1999be610ca147355eb5c25c96c8051ff3b32f094e296a77f08d6210fd73"
+  },
+  {
+    "id": "b1994c8506f63373",
+    "source": "已知金融\\Mastercard（灰色横版，深色文字）.png",
+    "sha256": "9ee60c3aca68db0ad5734d57deb4ff0be9121fd70c5318b6eed3f51976e6069b",
+    "width": 639,
+    "height": 147,
+    "outputSha256": "156f4ba53f250362b0e94171a2e1c9145c8de3f16e82271b78ef5dcd20b27a38"
+  },
+  {
+    "id": "bc94d14f600aac7a",
+    "source": "已知金融\\Mastercard（灰色横版，白色文字）.png",
+    "sha256": "be18aaa090baa04c691305eada4c766beb31524c1cf5337540d93d41d964b910",
+    "width": 639,
+    "height": 147,
+    "outputSha256": "c04a2c46b9d38035a029370c6f6c530ea01030bdd98cc4cda4e156612ede619f"
+  },
+  {
+    "id": "174e2a42af21bfeb",
+    "source": "已知金融\\Mastercard（灰色竖版，深色文字）.png",
+    "sha256": "4ff942558977eb4476871073b967cd019359722bc31278611ea0fe574ebffa6f",
+    "width": 196,
+    "height": 161,
+    "outputSha256": "2d74e4327a66cd83ffdfbf22e76ac6c9caa2c0186650cc45749b9fa5bd6a9dea"
+  },
+  {
+    "id": "e60252d7eea7ced6",
+    "source": "已知金融\\Mastercard（灰色竖版，白色文字）.png",
+    "sha256": "0cfc92656402713bc9083a7215f002e70634b7552435b6a9787b537b62d6347c",
+    "width": 196,
+    "height": 161,
+    "outputSha256": "e58422162de5d3f7e48adb655ec7f3dabb3b40c1dac2b48c0e25ff667a5b0585"
+  },
+  {
+    "id": "ced06676590abb91",
+    "source": "已知金融\\银联 QuickPass 闪付.png",
+    "sha256": "edeb85da540e33587d15d5f308eedfce3a8a8b383a5609dee69df719a04b3d44",
+    "width": 418,
+    "height": 240,
+    "outputSha256": "dac31ed855363a9f3315d64ab5e2f5576747114533d1b197b9920ed74fc6d0fd"
+  },
+  {
+    "id": "50f0f29cce371a1b",
+    "source": "已知金融\\Visa_02.png",
+    "sha256": "6d70d4349219480f1896a6a5388476728afe684dc020c1f6fdadf1b27b5f2abb",
+    "width": 400,
+    "height": 212,
+    "outputSha256": "da3f130468500ce50ef9f4c4b7a05c670aed6abc3abb39526beddc30fc489cde"
+  },
+  {
+    "id": "a8a688a4eb94f67a",
+    "source": "已知金融\\上海银行.png",
+    "sha256": "c6cead90e2c1dadc979be2590c6847bbf6cb93924f5f36a7fe25a8a376d02b2f",
+    "width": 230,
+    "height": 60,
+    "outputSha256": "f66d4bd207dc86e0ae3631f57f3244c1a6daaf305233913b196217766cc858d8"
+  },
+  {
+    "id": "cffc4cb6fa88e578",
+    "source": "已知金融\\中国银行.png",
+    "sha256": "9a78c4beb568e359d7fccc3d5ea9a5e86e7c1da7763cea0979279c40488458fe",
+    "width": 342,
+    "height": 109,
+    "outputSha256": "72a27bf1b63103388adca9f444e9a42e24111d1bcec08b32b0f1fba7e4d53856"
+  },
+  {
+    "id": "da906c9f8e042a30",
+    "source": "已知金融\\中国银行（白色）.png",
+    "sha256": "b1c197867ecf88e008d9dbcff192c542e505646944301ed7d8fdd833d83bdc88",
+    "width": 320,
+    "height": 98,
+    "outputSha256": "3427c52100fd0bd9ad943f2fcf70446a0822d2c486970ab929eab94b86d60f3c"
+  },
+  {
+    "id": "7178ad8a56f8de2d",
+    "source": "已知金融\\交行.png",
+    "sha256": "0aca403f64a0432e10b9a208f85bacf043901ef38e2ffea33b2345584d3b3093",
+    "width": 283,
+    "height": 55,
+    "outputSha256": "c15e73949d158709d560ea3f2516b5a433132991e26afa92661102c9e75cc66a"
+  },
+  {
+    "id": "43427eee88dc5a26",
+    "source": "已知金融\\京东金融（彩色_金色）.png",
+    "sha256": "1ea98f45faf4e92e07a1e255a48502f48cc7333d1c69e650ca8b5e19063a8a96",
+    "width": 342,
+    "height": 82,
+    "outputSha256": "b428c14caf7ee5465446338d7aec8655f807278c9ed7db86b2165f5a64fef130"
+  },
+  {
+    "id": "34270a7f969550da",
+    "source": "已知金融\\京东金融（白色版）.png",
+    "sha256": "38af60eb88f964fbb0f4224df5151a26ae1775a13985a2d30eabbb1c291fde6d",
+    "width": 224,
+    "height": 54,
+    "outputSha256": "58bf6e4e958037fabce0b88bb912e8e1066f0ce6f111ba536a418af90e86aaa0"
+  },
+  {
+    "id": "bc72c572d38e46b5",
+    "source": "已知金融\\京东闪付.png",
+    "sha256": "8a85715b567660b6866b0f515dcb438becf4a9a4a6fb36c6659be363761d54a9",
+    "width": 600,
+    "height": 466,
+    "outputSha256": "ff96ff2008ce3e273430fee3fb200753dae74fc1204b29be020481dea15685ba"
+  },
+  {
+    "id": "847863e64cde9e36",
+    "source": "已知金融\\农行.png",
+    "sha256": "11ff9ff910780cc7049494351e1cb89082e90a3c6361352a0bbfa22bc6a4293f",
+    "width": 276,
+    "height": 55,
+    "outputSha256": "2e508ac942a34dd908cd650fcba15dabc8ab9e2b91b0a3ed90ecd37d88584ba7"
+  },
+  {
+    "id": "b4a0339698d11ad2",
+    "source": "已知金融\\中国民生银行_01.png",
+    "sha256": "c3623da997153748ad2fd0cb60d9fc753c272d335eb4209ae99e7cfad27fed5c",
+    "width": 836,
+    "height": 142,
+    "outputSha256": "444ddf03b19c2b2470026163c0d7d5d1db7ad13156a25e7f90709c731b823804"
+  },
+  {
+    "id": "eea430396039acc3",
+    "source": "已知金融\\中国民生银行_02.png",
+    "sha256": "03d106f634502a5377557c3dcfee8abf10fa0c896c55b452a7526dc8023e38b9",
+    "width": 562,
+    "height": 98,
+    "outputSha256": "123d0c0d9089ac114e049df3f5683d796674e7241e7acd9c2399d8206687ada8"
+  },
+  {
+    "id": "fc1ebae4094f3122",
+    "source": "已知金融\\工商银行.png",
+    "sha256": "d6815709ba903ebfde5a91185b21fe55c5fa7553e718f842c75165664932c9f4",
+    "width": 330,
+    "height": 40,
+    "outputSha256": "1df6cad55b89c77f356b19b83b14609a92fb609810a82eb179fe4bf6390bc00d"
+  },
+  {
+    "id": "2fec1dab8bd55a6c",
+    "source": "已知金融\\平安银行.png",
+    "sha256": "87d6adcb772d966dabadeb39cedeea434b07d91207dc1c8523efd7ed2604ce48",
+    "width": 606,
+    "height": 101,
+    "outputSha256": "f3f2d817829ae7f0f14ba9f3dd873de9388a9f7709c8716fbf94adc31ceac146"
+  },
+  {
+    "id": "14cf2b51cf9fbdca",
+    "source": "已知金融\\平安银行（灰色）.png",
+    "sha256": "1b4050e1a1090b7fcace356a40d586e4ca9ceaad6ffd3d23f02c234eeaa5446d",
+    "width": 379,
+    "height": 76,
+    "outputSha256": "b7e89820250124a7a9ed3998deedb1cb29fd6963232d0042880c1cc33d615686"
+  },
+  {
+    "id": "5e4a82cfa0490c52",
+    "source": "已知金融\\平安银行（金色）.png",
+    "sha256": "e7304c61fa67acb6867b9e457e20f01a8f2921e442e033caf9c4c69c8037bcdc",
+    "width": 615,
+    "height": 109,
+    "outputSha256": "9de2c4933e038982a512137a78075e18035d83437ce853612084dbb08c49936c"
+  },
+  {
+    "id": "939c4462a76dfebe",
+    "source": "已知金融\\建设银行.png",
+    "sha256": "bae046afe443e0b3a6fbf08f40183b730593c9ef1bae3f2611d6e471736a9f2f",
+    "width": 284,
+    "height": 60,
+    "outputSha256": "591d3d19d2c088236cb6737373d09d77fcc2cf3f551c8f8e1c62bc3c5ef2e91b"
+  },
+  {
+    "id": "a1c15ff53b84c7c8",
+    "source": "已知金融\\招商银行.png",
+    "sha256": "6a61a045e9277db3d97f4bbf687811b5e29c8b9315e6b38e4a48c2e492babb61",
+    "width": 231,
+    "height": 55,
+    "outputSha256": "f2f9478249499af4ea6ca049290e1403f7153b12d1771987b482b25b39deeba5"
+  },
+  {
+    "id": "c0c0b7560d764bc1",
+    "source": "已知金融\\民生银行.png",
+    "sha256": "9670b7c52576e7dcd5dd46083dad54c7a7524db0078de2a166b7f3c63322743c",
+    "width": 1548,
+    "height": 233,
+    "outputSha256": "b8190f6f1f98861d05507ec1c105a4b41d6bbff25c413a9fcb19b7609ba44b54"
+  },
+  {
+    "id": "a0214f1fb1cb9500",
+    "source": "已知金融\\浙江农信.png",
+    "sha256": "eefe7273d147b5155c6cb0667d76f79075dcdfdb7d175cebcce107fcdca4b0ef",
+    "width": 461,
+    "height": 82,
+    "outputSha256": "ee42836c40a03042617409402626ff9e9e33b891338db359f4a1f9c3cd3da365"
+  },
+  {
+    "id": "90ba7436d85e9ff9",
+    "source": "已知金融\\浦发银行.png",
+    "sha256": "7df921e8223e1bfd5c78aa5e88b133167d1bc766ac6d5432809083bea7cdeda4",
+    "width": 214,
+    "height": 60,
+    "outputSha256": "968daa161a3e4591ce7e2983242bed7dce3561841e3b60c9de1546077e4025b8"
+  },
+  {
+    "id": "d02dccba000317f0",
+    "source": "已知金融\\邮储银行.png",
+    "sha256": "91cfdc702cfedcd8fcfa4815550c18ab8a6bdda71704c11e4fe42983443d87b0",
+    "width": 533,
+    "height": 111,
+    "outputSha256": "64c6fce109b23ac38f4144db610bf701be8876d4a818db5fc5b9079b01eb42dd"
+  },
+  {
+    "id": "4251b03b40b7d477",
+    "source": "已知金融\\邮储银行（白色）.png",
+    "sha256": "946c9e7923e33f079a23dea64830ade52208b8323f6b426543bec20a45c8dc71",
+    "width": 566,
+    "height": 96,
+    "outputSha256": "e768bf373d61bdacc30bbafaf59666c12c6b0baa170e46a10cd733be7965be2e"
+  },
+  {
+    "id": "031ba77587b97736",
+    "source": "已知金融\\银联（小标位于大画布右下）.png",
+    "sha256": "f9be69ec3bd0379c8e14bda235fa7f258504bbc1351517314e85aca9c2f03909",
+    "width": 960,
+    "height": 605,
+    "outputSha256": "a87b4da51cfb5bc97170bae2e6ccaf1000cf3c075098752b1fb15f62cd392bc8"
+  },
+  {
+    "id": "91339dfb1fc29bf0",
+    "source": "已知金融\\银联（灰色）.png",
+    "sha256": "d7c779f1c4fe23973922e57241f91ea2fbcf847a244b26118634c6d5eca53245",
+    "width": 1280,
+    "height": 800,
+    "outputSha256": "87f034ff0e7daac66b00179544b0f73112e59475177b21658326e6068f363ad1"
+  }
+]
